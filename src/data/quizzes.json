@@ -1,0 +1,2521 @@
+{
+  "PAS": {
+    "id": "PAS",
+    "code": "IT2110 / IT2120",
+    "title": "Probability and Statistics",
+    "semester": "Year 2, Semester 1",
+    "description": "Computer-Based Exam questions, hypothesis testing, confidence intervals, distributions, outlier analysis, Chi-Square, and time series.",
+    "icon": "chart-scatter",
+    "accent": "#0d9488",
+    "papers": [
+      "Computer-Based Exam (Lab Replica)",
+      "Final Exam Past Papers Compilation",
+      "Lockdown Exam Revision"
+    ],
+    "questions": [
+      {
+        "id": "PAS-CBE-01",
+        "source": "Computer_Based_Exam/Question_01.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 3,
+        "topic": "Confidence Intervals for One Mean (Small Sample)",
+        "marks": 12.0,
+        "difficulty": "Hard",
+        "prompt": "A company monitors the average response time of its cloud servers to ensure optimal performance for users. The response time is measured in seconds, and the company wants to estimate the true mean response time of all servers. A random sample of 25 servers shows an average response time of 1.75 seconds with a standard deviation of 0.25 seconds. Construct a 95% confidence interval for the true mean response time.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. Lower limit equation:",
+            "type": "dropdown",
+            "options": [
+              "x\u0304 - t(\u03b1/2, n-1) * (s / \u221an)",
+              "x\u0304 + t(\u03b1/2, n-1) * (s / \u221an)",
+              "x\u0304 - z(\u03b1/2) * (\u03c3 / \u221an)",
+              "x\u0304 + z(\u03b1/2) * (s / \u221an)"
+            ],
+            "answer": "x\u0304 - t(\u03b1/2, n-1) * (s / \u221an)",
+            "hint": "Since population standard deviation \u03c3 is unknown and n = 25 < 30, the Student's t-distribution with df = 24 is used."
+          },
+          {
+            "id": "sq2",
+            "label": "2. Upper limit equation:",
+            "type": "dropdown",
+            "options": [
+              "x\u0304 + t(\u03b1/2, n-1) * (s / \u221an)",
+              "x\u0304 - t(\u03b1/2, n-1) * (s / \u221an)",
+              "x\u0304 + z(\u03b1/2) * (\u03c3 / \u221an)",
+              "x\u0304 - z(\u03b1/2) * (s / \u221an)"
+            ],
+            "answer": "x\u0304 + t(\u03b1/2, n-1) * (s / \u221an)",
+            "hint": "Upper limit adds the margin of error to the sample mean."
+          },
+          {
+            "id": "sq3",
+            "label": "3. Critical value:",
+            "instruction": "(Type your answer here and keep the answer with all decimal places. Do not mention the sign. Mention only the number)",
+            "type": "text",
+            "answer": "2.0639",
+            "acceptedAnswers": [
+              "2.0639",
+              "2.064",
+              "2.06"
+            ],
+            "hint": "For 95% confidence, \u03b1 = 0.05. Two-tailed tail area = 0.025 with degrees of freedom df = 25 - 1 = 24. From t-tables, t_0.025,24 = 2.0639."
+          },
+          {
+            "id": "sq4",
+            "label": "4. Lower limit value:",
+            "instruction": "(Type your answer here and keep the answer with four decimal places)",
+            "type": "text",
+            "answer": "1.6468",
+            "acceptedAnswers": [
+              "1.6468",
+              "1.6467",
+              "1.647"
+            ],
+            "hint": "Lower = 1.75 - 2.0639 * (0.25 / 5) = 1.75 - 0.103195 = 1.6468."
+          },
+          {
+            "id": "sq5",
+            "label": "5. Upper limit value:",
+            "instruction": "(Type your answer here and keep the answer with four decimal places)",
+            "type": "text",
+            "answer": "1.8532",
+            "acceptedAnswers": [
+              "1.8532",
+              "1.8533",
+              "1.853"
+            ],
+            "hint": "Upper = 1.75 + 2.0639 * (0.25 / 5) = 1.75 + 0.103195 = 1.8532."
+          },
+          {
+            "id": "sq6",
+            "label": "6. Lets assume that lower limit is a and upper limit is b. Interpret the confidence interval:",
+            "type": "radio",
+            "options": [
+              "We are 95% confident that the true mean response time will be between a and b",
+              "We are 5% confident that the true mean response time will be between a and b",
+              "We are 2.5% confident that the true mean response time will not be between a and b",
+              "We are 95% confident that the true mean response time will not be between a and b",
+              "We are 2.5% confident that the true mean response time will be between a and b"
+            ],
+            "answer": 0,
+            "hint": "A 95% confidence interval means we are 95% confident that the unknown true population parameter \u03bc lies between the calculated lower and upper bounds."
+          }
+        ],
+        "theorySummary": "When estimating an unknown population mean \u03bc from a small sample (n < 30) with unknown population variance \u03c3\u00b2, we apply Student's t-distribution with \u03bd = n - 1 degrees of freedom. The margin of error is E = t_{\u03b1/2, n-1} * (s / \u221an)."
+      },
+      {
+        "id": "PAS-CBE-02",
+        "source": "Computer_Based_Exam/Question_08.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 2,
+        "topic": "One-Sample Hypothesis Testing (Left-Tailed Z-Test)",
+        "marks": 14.0,
+        "difficulty": "Expert",
+        "prompt": "A software company claims that its new algorithm reduces the average response time of its server from the current average of 250 milliseconds. A random sample of 40 server response times after implementing the new algorithm has a mean response time of 245 milliseconds with a standard deviation of 18 milliseconds. The company wants to test whether the new algorithm has significantly reduced the server response time than 250 milliseconds. Test the company's claim at 5% level of significance.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. What is the hypothesis?",
+            "type": "dropdown",
+            "options": [
+              "H0: \u03bc \u2265 250 vs H1: \u03bc < 250",
+              "H0: \u03bc = 250 vs H1: \u03bc \u2260 250",
+              "H0: \u03bc \u2264 250 vs H1: \u03bc > 250",
+              "H0: \u03bc = 245 vs H1: \u03bc < 245"
+            ],
+            "answer": "H0: \u03bc \u2265 250 vs H1: \u03bc < 250",
+            "hint": "The claim is that the algorithm reduces response time (< 250). The research hypothesis H1 takes the strict inequality (< 250)."
+          },
+          {
+            "id": "sq2",
+            "label": "2. What is the distribution of test statistic?",
+            "type": "dropdown",
+            "options": [
+              "Standard Normal distribution",
+              "Student's t-distribution with 39 df",
+              "Chi-Square distribution with 40 df",
+              "F-distribution"
+            ],
+            "answer": "Standard Normal distribution",
+            "hint": "Since sample size n = 40 \u2265 30, the Central Limit Theorem ensures that the sample mean distribution is approximately normal, and Z-test is applicable."
+          },
+          {
+            "id": "sq3",
+            "label": "3. What is the critical value?",
+            "instruction": "(Type your answer here and keep the answer with two decimal places. Mention only the number)",
+            "type": "text",
+            "answer": "1.65",
+            "acceptedAnswers": [
+              "1.65",
+              "1.64",
+              "1.645"
+            ],
+            "hint": "For a left-tailed test at \u03b1 = 0.05, Z_0.05 = 1.645 \u2248 1.65 (magnitude)."
+          },
+          {
+            "id": "sq4",
+            "label": "4. Select correct rejection region for the test.",
+            "type": "dropdown",
+            "options": [
+              "Z_calc < -1.645 (or Z < -Z_0.05)",
+              "Z_calc > 1.645",
+              "Z_calc < -1.96 or Z_calc > 1.96",
+              "Z_calc > 1.96"
+            ],
+            "answer": "Z_calc < -1.645 (or Z < -Z_0.05)",
+            "hint": "Because H1 has '<', the entire rejection area lies in the extreme left tail."
+          },
+          {
+            "id": "sq5",
+            "label": "5. What is the test statistic value?",
+            "instruction": "(Type your answer here and round off the answer up to four decimal places)",
+            "type": "text",
+            "answer": "-1.7568",
+            "acceptedAnswers": [
+              "-1.7568",
+              "-1.7569",
+              "-1.76"
+            ],
+            "hint": "Z = (245 - 250) / (18 / \u221a40) = -5 / 2.84605 = -1.7568."
+          },
+          {
+            "id": "sq6",
+            "label": "6. Give the scientific conclusion:",
+            "type": "dropdown",
+            "options": [
+              "Reject H0 at 5% significance level since Z_calc falls in the rejection region",
+              "Fail to reject H0 at 5% significance level since Z_calc does not fall in the rejection region",
+              "Reject H1 at 5% significance level",
+              "Accept H0 as proven true"
+            ],
+            "answer": "Reject H0 at 5% significance level since Z_calc falls in the rejection region",
+            "hint": "-1.7568 < -1.645, which lies inside the critical rejection zone."
+          },
+          {
+            "id": "sq7",
+            "label": "7. What is the general conclusion?",
+            "type": "dropdown",
+            "options": [
+              "There is sufficient evidence to conclude that the new algorithm significantly reduces the server response time",
+              "There is insufficient evidence to conclude that the new algorithm reduces response time",
+              "The new algorithm has no effect on server response time",
+              "The server response time has increased significantly"
+            ],
+            "answer": "There is sufficient evidence to conclude that the new algorithm significantly reduces the server response time",
+            "hint": "Rejecting H0 means supporting the company's research claim at the 5% level."
+          }
+        ],
+        "theorySummary": "Hypothesis testing: Formulate H0 and H1. Determine test statistic Z = (X\u0304 - \u03bc0)/(s/\u221an). Compare with critical value -Z_\u03b1. If Z_calc < -Z_\u03b1, reject H0."
+      },
+      {
+        "id": "PAS-CBE-03",
+        "source": "Computer_Based_Exam/Question_11.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 4,
+        "topic": "Descriptive Statistics, Quartiles, and Outlier Analysis",
+        "marks": 20.0,
+        "difficulty": "Hard",
+        "prompt": "Consider the following set of execution times (in milliseconds) for different algorithms on various datasets:\n26, 32, 45, 32, 24, 29, 23, 33, 43, 37, 15, 32, 22, 52, 27, 19, 24, 35, 43, 32, 41, 35, 19, 32, 34, 29, 37, 34, 34, 49, 23\n(Type your answers within the given spaces except for part 3)",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1_1",
+            "label": "1.1 Mode:",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "32",
+            "acceptedAnswers": [
+              "32"
+            ],
+            "hint": "Value 32 occurs 5 times, which is the highest frequency."
+          },
+          {
+            "id": "sq1_2",
+            "label": "1.2 Q1 (First quartile):",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "24",
+            "acceptedAnswers": [
+              "24"
+            ],
+            "hint": "For N = 31 sorted data, position = 0.25 * (31 + 1) = 8th value = 24."
+          },
+          {
+            "id": "sq1_3",
+            "label": "1.3 Median:",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "32",
+            "acceptedAnswers": [
+              "32"
+            ],
+            "hint": "The 16th value in the sorted list of 31 items is 32."
+          },
+          {
+            "id": "sq1_4",
+            "label": "1.4 Q3 (Third quartile):",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "37",
+            "acceptedAnswers": [
+              "37"
+            ],
+            "hint": "Position = 0.75 * (31 + 1) = 24th value = 37."
+          },
+          {
+            "id": "sq1_5",
+            "label": "1.5 Mean:",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "32",
+            "acceptedAnswers": [
+              "32",
+              "32.0",
+              "32.00"
+            ],
+            "hint": "Sum of all 31 observations = 992. Mean = 992 / 31 = 32.0."
+          },
+          {
+            "id": "sq1_6",
+            "label": "1.6 IQR:",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "13",
+            "acceptedAnswers": [
+              "13"
+            ],
+            "hint": "IQR = Q3 - Q1 = 37 - 24 = 13."
+          },
+          {
+            "id": "sq2_1",
+            "label": "2.1 Upper boundary to check outliers:",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "56.5",
+            "acceptedAnswers": [
+              "56.5"
+            ],
+            "hint": "Upper Fence = Q3 + 1.5 * IQR = 37 + 1.5 * 13 = 37 + 19.5 = 56.5."
+          },
+          {
+            "id": "sq2_2",
+            "label": "2.2 Lower boundary to check outliers:",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "4.5",
+            "acceptedAnswers": [
+              "4.5"
+            ],
+            "hint": "Lower Fence = Q1 - 1.5 * IQR = 24 - 1.5 * 13 = 24 - 19.5 = 4.5."
+          },
+          {
+            "id": "sq2_3",
+            "label": "2.3 How many outliers are there in the data set:",
+            "type": "text",
+            "answer": "0",
+            "acceptedAnswers": [
+              "0"
+            ],
+            "hint": "Minimum value is 15 (> 4.5) and maximum is 52 (< 56.5). Therefore, 0 outliers."
+          },
+          {
+            "id": "sq3",
+            "label": "3. Which of the following statistics would remain unchanged if a constant value was added to every execution time in the dataset?",
+            "type": "dropdown",
+            "options": [
+              "Interquartile range (IQR)",
+              "Mean",
+              "Median",
+              "Mode"
+            ],
+            "answer": "Interquartile range (IQR)",
+            "hint": "Measures of dispersion (Variance, Standard Deviation, IQR, Range) are invariant under constant addition/shifting: IQR(X + c) = IQR(X)."
+          }
+        ],
+        "theorySummary": "Quartiles divide sorted data into four quarters. Fences for outliers are defined as [Q1 - 1.5*IQR, Q3 + 1.5*IQR]. Adding a constant k to each observation shifts central tendencies by k but leaves measures of dispersion unchanged."
+      },
+      {
+        "id": "PAS-CBE-04",
+        "source": "Computer_Based_Exam/Question_02.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 5,
+        "topic": "Continuous Probability: Normal Distribution Applications",
+        "marks": 6.0,
+        "difficulty": "Hard",
+        "prompt": "Most graduate schools of computer science require applicants to take a Programming Aptitude Test (PAT). Scores on the PAT are approximately normally distributed with a mean of 680 and a standard deviation of 75.\nFind the answers to the following questions (Type the answer in the given space).",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1) What is the probability of an individual scoring above 700 on the PAT?",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "0.3948",
+            "acceptedAnswers": [
+              "0.3948",
+              "0.395",
+              "0.394"
+            ],
+            "hint": "Z = (700 - 680) / 75 = 20 / 75 = 0.27. P(X > 700) = P(Z > 0.27) = 1 - \u03a6(0.27) = 1 - 0.6064 = 0.3948 (or 0.3949)."
+          },
+          {
+            "id": "sq2",
+            "label": "2) How high must an individual score on the PAT in order to score in the highest 2%?",
+            "instruction": "(Round off the answer up to 2 decimal places)",
+            "type": "text",
+            "answer": "834.03",
+            "acceptedAnswers": [
+              "834.03",
+              "834.0",
+              "834",
+              "834.13"
+            ],
+            "hint": "Highest 2% corresponds to area 0.98 to the left. Critical Z_0.02 = 2.054 (or 2.05). X = \u03bc + Z*\u03c3 = 680 + 2.0537 * 75 = 834.03."
+          },
+          {
+            "id": "sq3",
+            "label": "3) What is the probability of an individual scoring below 600 on the PAT?",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "0.1431",
+            "acceptedAnswers": [
+              "0.1431",
+              "0.143",
+              "0.1423"
+            ],
+            "hint": "Z = (600 - 680) / 75 = -80 / 75 = -1.07. P(X < 600) = \u03a6(-1.07) = 0.1423 to 0.1431."
+          }
+        ],
+        "theorySummary": "Standardization converts any normal distribution X ~ N(\u03bc, \u03c3\u00b2) to the standard normal Z = (X - \u03bc) / \u03c3 ~ N(0, 1). To find cutoffs for top percentiles, solve X = \u03bc + Z*\u03c3."
+      },
+      {
+        "id": "PAS-CBE-05",
+        "source": "Computer_Based_Exam/Question_14.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 5,
+        "topic": "Exploratory Data Analysis and Distribution Skewness",
+        "marks": 20.0,
+        "difficulty": "Hard",
+        "prompt": "Consider the variations in response times observed when a mobile application retrieves fitness tracking data from different cloud-hosted APIs.\n12, 18, 27, 23, 18, 14, 17, 25, 34, 33, 16, 27, 31, 39, 35, 26, 28, 37, 40, 42, 30, 36, 38, 24, 41, 13, 15, 14, 23, 43, 18\n(Type your answers within the given spaces except for part 3)",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1_1",
+            "label": "1.1 Mode:",
+            "instruction": "(If you have any, keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "18",
+            "acceptedAnswers": [
+              "18"
+            ],
+            "hint": "Value 18 appears 3 times in the sample."
+          },
+          {
+            "id": "sq1_2",
+            "label": "1.2 Q1 (First quartile):",
+            "instruction": "(If you have any, keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "18",
+            "acceptedAnswers": [
+              "18"
+            ],
+            "hint": "8th value in ordered list of 31 observations is 18."
+          },
+          {
+            "id": "sq1_3",
+            "label": "1.3 Median:",
+            "instruction": "(If you have any, keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "27",
+            "acceptedAnswers": [
+              "27"
+            ],
+            "hint": "16th ordered value is 27."
+          },
+          {
+            "id": "sq1_4",
+            "label": "1.4 Q3 (Third quartile):",
+            "instruction": "(If you have any, keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "36",
+            "acceptedAnswers": [
+              "36"
+            ],
+            "hint": "24th ordered value is 36."
+          },
+          {
+            "id": "sq1_5",
+            "label": "1.5 Mean:",
+            "instruction": "(If you have any, keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "27",
+            "acceptedAnswers": [
+              "27",
+              "27.0",
+              "27.00"
+            ],
+            "hint": "Sum = 837 / 31 = 27.0."
+          },
+          {
+            "id": "sq1_6",
+            "label": "1.6 IQR:",
+            "instruction": "(If you have any, keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "18",
+            "acceptedAnswers": [
+              "18"
+            ],
+            "hint": "IQR = Q3 - Q1 = 36 - 18 = 18."
+          },
+          {
+            "id": "sq2_1",
+            "label": "2.1 Upper boundary to check outliers:",
+            "type": "text",
+            "answer": "63",
+            "acceptedAnswers": [
+              "63",
+              "63.0"
+            ],
+            "hint": "Upper fence = 36 + 1.5 * 18 = 36 + 27 = 63."
+          },
+          {
+            "id": "sq2_2",
+            "label": "2.2 Lower boundary to check outliers:",
+            "type": "text",
+            "answer": "-9",
+            "acceptedAnswers": [
+              "-9",
+              "-9.0"
+            ],
+            "hint": "Lower fence = 18 - 1.5 * 18 = 18 - 27 = -9."
+          },
+          {
+            "id": "sq2_3",
+            "label": "2.3 How many outliers are there in the data set:",
+            "type": "text",
+            "answer": "0",
+            "acceptedAnswers": [
+              "0"
+            ],
+            "hint": "All observations fall within [-9, 63]."
+          },
+          {
+            "id": "sq3",
+            "label": "3. According to the box plot of the data set, what is the shape of the distribution?",
+            "type": "dropdown",
+            "options": [
+              "Symmetric distribution",
+              "Positively skewed (skewed to the right)",
+              "Negatively skewed (skewed to the left)",
+              "Bimodal distribution"
+            ],
+            "answer": "Symmetric distribution",
+            "hint": "Mean = 27 and Median = 27, and the distance from Q1 to Median (27 - 18 = 9) exactly equals the distance from Median to Q3 (36 - 27 = 9). The box plot is symmetric."
+          }
+        ],
+        "theorySummary": "When Mean \u2248 Median and (Median - Q1) \u2248 (Q3 - Median), the distribution shows no skewness and is symmetric."
+      },
+      {
+        "id": "PAS-CBE-06",
+        "source": "Computer_Based_Exam/Question_04.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 7,
+        "topic": "Principles of Experimental Design: Variable Identification",
+        "marks": 24.0,
+        "difficulty": "Medium",
+        "prompt": "1) A researcher is studying the effect of light exposure on the sleep patterns of adults. The researcher exposes one group to 6 hours of light, another group to 8 hours, and a third group to 10 hours of light daily, then measures how many hours of sleep each group gets on average.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "Independent Variable:",
+            "type": "radio",
+            "options": [
+              "Average age of the participants",
+              "Time of day the light exposure occurs",
+              "Number of adults in each group",
+              "Hours of light exposure (6 hours, 8 hours, 10 hours)",
+              "Hours of sleep"
+            ],
+            "answer": 3,
+            "hint": "The independent variable is the factor deliberately manipulated or controlled by the experimenter."
+          },
+          {
+            "id": "sq2",
+            "label": "Dependent Variable:",
+            "type": "radio",
+            "options": [
+              "Time of day the light exposure occurs",
+              "Average age of the participants",
+              "Number of adults in each group",
+              "Hours of light exposure (6 hours, 8 hours, 10 hours)",
+              "Hours of sleep"
+            ],
+            "answer": 4,
+            "hint": "The dependent variable is the outcome measured to assess the effect of the treatment."
+          }
+        ],
+        "theorySummary": "In scientific experiments, the Independent Variable (IV) is what is changed, while the Dependent Variable (DV) is what is observed and measured."
+      },
+      {
+        "id": "PAS-CBE-07",
+        "source": "Computer_Based_Exam/Question_15.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 4,
+        "topic": "Two-Tailed Hypothesis Testing for Population Mean (Known Variance)",
+        "marks": 14.0,
+        "difficulty": "Expert",
+        "prompt": "A software development team claimed that the new API endpoint do not change the true average response time from 150 milliseconds (which is the current response time). A random sample of 45 requests recorded a mean response time of 156 milliseconds with population standard deviation of 12 milliseconds. Test the claim at 5% level of significance.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. What is the hypothesis?",
+            "type": "dropdown",
+            "options": [
+              "H0: \u03bc = 150 vs H1: \u03bc \u2260 150",
+              "H0: \u03bc \u2265 150 vs H1: \u03bc < 150",
+              "H0: \u03bc \u2265 150 vs H1: \u03bc \u2260 150",
+              "H0: \u03bc \u2264 150 vs H1: \u03bc \u2260 150",
+              "H0: \u03bc \u2264 150 vs H1: \u03bc > 150"
+            ],
+            "answer": "H0: \u03bc = 150 vs H1: \u03bc \u2260 150",
+            "hint": "The team claims the response time 'does not change' (remains 150). The two-tailed alternative hypothesis is \u03bc \u2260 150."
+          },
+          {
+            "id": "sq2",
+            "label": "2. What is the distribution of test statistic?",
+            "type": "dropdown",
+            "options": [
+              "Standard Normal distribution",
+              "Student's t-distribution with 44 df",
+              "Chi-Square distribution",
+              "Exponential distribution"
+            ],
+            "answer": "Standard Normal distribution",
+            "hint": "Population standard deviation \u03c3 = 12 is known and sample size n = 45 > 30, so the test statistic follows a Standard Normal (Z) distribution."
+          },
+          {
+            "id": "sq3",
+            "label": "3. What is the critical value?",
+            "instruction": "(Type your answer here and keep the answer with two decimal places. Do not mention the sign. Mention only the number)",
+            "type": "text",
+            "answer": "1.96",
+            "acceptedAnswers": [
+              "1.96"
+            ],
+            "hint": "For a two-tailed test at \u03b1 = 0.05, \u03b1/2 = 0.025 in each tail. Z_0.025 = 1.96."
+          },
+          {
+            "id": "sq4",
+            "label": "4. Select correct rejection region for the test.",
+            "type": "dropdown",
+            "options": [
+              "Z_calc < -1.96 or Z_calc > 1.96",
+              "Z_calc > 1.96",
+              "Z_calc < -1.645",
+              "Z_calc > 1.645"
+            ],
+            "answer": "Z_calc < -1.96 or Z_calc > 1.96",
+            "hint": "Two-tailed rejection region consists of both extremes |Z| > 1.96."
+          },
+          {
+            "id": "sq5",
+            "label": "5. What is the test statistic value?",
+            "instruction": "(Type your answer here and round off the answer up to four decimal places)",
+            "type": "text",
+            "answer": "3.3541",
+            "acceptedAnswers": [
+              "3.3541",
+              "3.354",
+              "3.35"
+            ],
+            "hint": "Z = (156 - 150) / (12 / \u221a45) = 6 / (12 / 6.7082) = 6 / 1.78885 = 3.3541."
+          },
+          {
+            "id": "sq6",
+            "label": "6. Give the scientific conclusion:",
+            "type": "dropdown",
+            "options": [
+              "Reject H0 at 5% significance level",
+              "Fail to reject H0 at 5% significance level",
+              "Accept H0 as definitively true",
+              "Inconclusive test result"
+            ],
+            "answer": "Reject H0 at 5% significance level",
+            "hint": "Calculated value Z_calc = 3.3541 is substantially greater than the critical threshold 1.96."
+          },
+          {
+            "id": "sq7",
+            "label": "7. What is the general conclusion?",
+            "type": "dropdown",
+            "options": [
+              "There is sufficient evidence that the new API endpoint changes the average response time",
+              "There is insufficient evidence that the new API endpoint changes the average response time",
+              "The response time remains exactly 150 milliseconds",
+              "The sample size was inadequate"
+            ],
+            "answer": "There is sufficient evidence that the new API endpoint changes the average response time",
+            "hint": "Rejecting H0 disproves the team's claim that response time did not change."
+          }
+        ],
+        "theorySummary": "When \u03c3 is known, Z = (X\u0304 - \u03bc0) / (\u03c3 / \u221an). In a two-tailed test, reject H0 if |Z| > Z_{\u03b1/2}."
+      },
+      {
+        "id": "PAS-CBE-08",
+        "source": "Computer_Based_Exam/Question_16.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 3,
+        "topic": "Time Series Components Identification",
+        "marks": 6.0,
+        "difficulty": "Medium",
+        "prompt": "Consider the following time series plot. Time is in years.",
+        "image": "/images/timeseries_plot.jpg",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. What are the components we can identify through the above time series plot?",
+            "type": "dropdown",
+            "options": [
+              "Upward trend, irregular fluctuations and cyclic variations",
+              "Upward trend only",
+              "Seasonal component and cyclic variations only",
+              "Irregular fluctuations only",
+              "Upward trend and irregular fluctuations only"
+            ],
+            "answer": "Upward trend, irregular fluctuations and cyclic variations",
+            "hint": "The plot exhibits an overarching upward secular trend over decades, multi-year cyclical crests and troughs (cycles), and sharp short-term jagged noise (irregular variations). Since time is measured in years, within-year seasonality is not observed."
+          }
+        ],
+        "theorySummary": "A classical time series Y_t consists of: Trend (T), Cyclical (C), Seasonal (S), and Irregular (I) components. Annual data exhibits Trend, Cyclical, and Irregular components."
+      },
+      {
+        "id": "PAS-CBE-09",
+        "source": "Computer_Based_Exam/Question_17.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 5,
+        "topic": "Normal Distribution Probability Computations",
+        "marks": 6.0,
+        "difficulty": "Hard",
+        "prompt": "A tech company uses a Data Analyst Proficiency Test (DAPT) to evaluate applicants. Scores on the DAPT are normally distributed with a mean of 750 and a standard deviation of 85.\nFind the answers to the following questions (Type the answer in the given space).",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1) What is the probability of an individual scoring above 780 on the DAPT?",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "0.3621",
+            "acceptedAnswers": [
+              "0.3621",
+              "0.3632",
+              "0.362"
+            ],
+            "hint": "Z = (780 - 750) / 85 = 30 / 85 = 0.3529 \u2248 0.35. P(Z > 0.35) = 1 - 0.6368 = 0.3632 (or 0.3621)."
+          },
+          {
+            "id": "sq2",
+            "label": "2) How high must an individual score on the DAPT to be in the highest 3%?",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "909.87",
+            "acceptedAnswers": [
+              "909.87",
+              "909.9",
+              "910",
+              "909.8"
+            ],
+            "hint": "Top 3% means area to the left is 0.97. Z_0.03 = 1.8808. X = 750 + 1.8808 * 85 = 909.87."
+          },
+          {
+            "id": "sq3",
+            "label": "3) What is the probability that an individual scores below 700 on the DAPT?",
+            "instruction": "(Keep all decimal places in the answer)",
+            "type": "text",
+            "answer": "0.2782",
+            "acceptedAnswers": [
+              "0.2782",
+              "0.2776",
+              "0.278"
+            ],
+            "hint": "Z = (700 - 750) / 85 = -50 / 85 = -0.5882 \u2248 -0.59. P(Z < -0.59) = 0.2776 to 0.2782."
+          }
+        ],
+        "theorySummary": "Normal probability calculations require standardizing X into Z = (X - \u03bc)/\u03c3, finding table values for \u03a6(Z), and reversing the transformation X = \u03bc + Z*\u03c3 to find critical score thresholds."
+      },
+      {
+        "id": "PAS-CBE-10",
+        "source": "Computer_Based_Exam/Question_18.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 2,
+        "topic": "Chi-Square Test of Independence in Contingency Tables",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "A school administrator wants to know if there is an association between students' academic year (1st year, 2nd year, 3rd year) and their preferred mode of learning (Face-to-face, Online, Hybrid). He collected data from 140 students and the results are shown below:\n\n| Academic Year | Face-to-Face | Online | Hybrid | Total |\n|---|---|---|---|---|\n| 1st Year | 15 | 13 | 12 | 40 |\n| 2nd Year | 14 | 16 | 10 | 40 |\n| 3rd Year | 18 | 20 | 22 | 60 |\n| Total | 47 | 49 | 44 | 140 |\n\nTest at 5% significance level whether there is a significant relationship between students' academic year and their preferred mode of learning.\n\nChi-Square Test Statistic: $X^2 = \\sum_{\\text{all } i} \\sum_{\\text{all } j} \\frac{(O_{ij} - E_{ij})^2}{E_{ij}}$",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. Hypothesis:",
+            "type": "dropdown",
+            "options": [
+              "H0: Students' academic year and their preferred mode of learning are independent Vs. H1: Students' academic year and their preferred mode of learning are not independent.",
+              "H0: Students' academic year and their preferred mode of learning are not independent Vs. H1: Students' academic year and their preferred mode of learning are independent.",
+              "H0: Academic year causes the mode of learning Vs. H1: Mode of learning causes academic year.",
+              "H0: All learning mode proportions are equal to 1/3."
+            ],
+            "answer": "H0: Students' academic year and their preferred mode of learning are independent Vs. H1: Students' academic year and their preferred mode of learning are not independent.",
+            "hint": "In a test of independence, H0 always states that the two categorical variables are independent."
+          },
+          {
+            "id": "sq2",
+            "label": "2. Degrees of Freedom (df):",
+            "type": "text",
+            "answer": "4",
+            "acceptedAnswers": [
+              "4"
+            ],
+            "hint": "df = (r - 1) * (c - 1) = (3 - 1) * (3 - 1) = 2 * 2 = 4."
+          },
+          {
+            "id": "sq3",
+            "label": "3. Critical Value (at \u03b1 = 0.05, df = 4):",
+            "type": "text",
+            "answer": "9.488",
+            "acceptedAnswers": [
+              "9.488",
+              "9.49"
+            ],
+            "hint": "From Chi-Square distribution tables with df = 4 and \u03b1 = 0.05, \u03c7\u00b2_crit = 9.488."
+          },
+          {
+            "id": "sq4",
+            "label": "4. Calculated Chi-Square Statistic Value:",
+            "type": "text",
+            "answer": "1.9167",
+            "acceptedAnswers": [
+              "1.9167",
+              "1.92",
+              "1.917"
+            ],
+            "hint": "Expected frequencies E_ij = (Row Total * Col Total) / Grand Total. Sum of (O - E)\u00b2 / E across all 9 cells equals 1.9167."
+          },
+          {
+            "id": "sq5",
+            "label": "5. Conclusion:",
+            "type": "dropdown",
+            "options": [
+              "Fail to reject H0; there is no significant association between academic year and mode of learning",
+              "Reject H0; academic year significantly affects learning mode",
+              "Accept H1 as definitively true",
+              "Test is invalid due to cell count violations"
+            ],
+            "answer": "Fail to reject H0; there is no significant association between academic year and mode of learning",
+            "hint": "Because \u03c7\u00b2_calc (1.9167) < \u03c7\u00b2_crit (9.488), we do not reject H0."
+          }
+        ],
+        "theorySummary": "The Chi-Square test of independence examines whether two categorical variables in an r x c contingency table are related. Expected count E_ij = (R_i * C_j) / N. The test statistic has (r-1)(c-1) degrees of freedom."
+      },
+      {
+        "id": "PAS-CBE-11",
+        "source": "Computer_Based_Exam/Question_19.jpg",
+        "paper": "Computer-Based Exam (Lab Replica)",
+        "questionNumber": 6,
+        "topic": "Large-Sample Confidence Interval for Mean (Known Variance)",
+        "marks": 12.0,
+        "difficulty": "Hard",
+        "prompt": "A tech firm wants to estimate the average time (in seconds) it takes for its database server to execute a query. A sample of 60 queries shows an average execution time of 0.72 seconds with a population standard deviation of 0.08 seconds. Construct a 95% confidence interval for the true mean execution time of the database server.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. Lower limit equation:",
+            "type": "dropdown",
+            "options": [
+              "x\u0304 - z(\u03b1/2) * (\u03c3 / \u221an)",
+              "x\u0304 + z(\u03b1/2) * (\u03c3 / \u221an)",
+              "x\u0304 - t(\u03b1/2, n-1) * (s / \u221an)",
+              "x\u0304 - z(\u03b1) * (\u03c3 / \u221an)"
+            ],
+            "answer": "x\u0304 - z(\u03b1/2) * (\u03c3 / \u221an)",
+            "hint": "Known population standard deviation \u03c3 uses the Standard Normal Z-equation."
+          },
+          {
+            "id": "sq2",
+            "label": "2. Upper limit equation:",
+            "type": "dropdown",
+            "options": [
+              "x\u0304 + z(\u03b1/2) * (\u03c3 / \u221an)",
+              "x\u0304 - z(\u03b1/2) * (\u03c3 / \u221an)",
+              "x\u0304 + t(\u03b1/2, n-1) * (s / \u221an)",
+              "x\u0304 + z(\u03b1) * (\u03c3 / \u221an)"
+            ],
+            "answer": "x\u0304 + z(\u03b1/2) * (\u03c3 / \u221an)",
+            "hint": "Upper limit adds the margin of error."
+          },
+          {
+            "id": "sq3",
+            "label": "3. Critical value:",
+            "instruction": "(Type your answer here and keep the answer with all decimal places. Do not mention the sign. Mention only the number)",
+            "type": "text",
+            "answer": "1.96",
+            "acceptedAnswers": [
+              "1.96"
+            ],
+            "hint": "For a 95% confidence interval with known variance, Z_0.025 = 1.96."
+          },
+          {
+            "id": "sq4",
+            "label": "4. Lower limit value:",
+            "instruction": "(Type your answer here and keep the answer with four decimal places)",
+            "type": "text",
+            "answer": "0.6998",
+            "acceptedAnswers": [
+              "0.6998",
+              "0.70"
+            ],
+            "hint": "Lower = 0.72 - 1.96 * (0.08 / \u221a60) = 0.72 - 0.02024 = 0.6998."
+          },
+          {
+            "id": "sq5",
+            "label": "5. Upper limit value:",
+            "instruction": "(Type your answer here and keep the answer with four decimal places)",
+            "type": "text",
+            "answer": "0.7402",
+            "acceptedAnswers": [
+              "0.7402",
+              "0.74"
+            ],
+            "hint": "Upper = 0.72 + 1.96 * (0.08 / \u221a60) = 0.72 + 0.02024 = 0.7402."
+          },
+          {
+            "id": "sq6",
+            "label": "6. Lets assume that lower limit is a and upper limit is b. Interpret the confidence interval:",
+            "type": "radio",
+            "options": [
+              "We are 95% confident that the true mean execution time of the database server will be between a and b",
+              "We are 95% confident that the true mean execution time of the database server will not be between a and b",
+              "We are 2.5% confident that the true mean execution time of the database server will not be between a and b",
+              "We are 2.5% confident that the true mean execution time of the database server will be between a and b",
+              "We are 5% confident that the true mean execution time of the database server will be between a and b"
+            ],
+            "answer": 0,
+            "hint": "Standard interpretation: 95% confidence that the population mean execution time lies within the interval."
+          }
+        ],
+        "theorySummary": "When \u03c3 is known, the 100(1-\u03b1)% confidence interval is X\u0304 \u00b1 Z_{\u03b1/2} * (\u03c3 / \u221an). Margin of error narrows as sample size n increases."
+      },
+      {
+        "id": "PAS-EXTRA-12",
+        "paper": "Final Exam Past Papers Compilation",
+        "questionNumber": 7,
+        "topic": "Discrete Distributions: Binomial Probability",
+        "marks": 10.0,
+        "difficulty": "Medium",
+        "prompt": "An automated testing suite tests 10 microservices. Each service has a probability $p = 0.05$ of failing a build, independently of other services. Let $X$ be the number of failed microservices.\n\nCalculate the probability that exactly 2 microservices fail the build: $P(X = 2) = \\binom{n}{x} p^x (1-p)^{n-x}$.",
+        "type": "mcq",
+        "options": [
+          "0.0746",
+          "0.0105",
+          "0.0025",
+          "0.1937"
+        ],
+        "answer": 0,
+        "solution": "n = 10, x = 2, p = 0.05, 1-p = 0.95. P(X = 2) = (10! / (2! * 8!)) * (0.05)^2 * (0.95)^8 = 45 * 0.0025 * 0.66342 = 0.0746.",
+        "theorySummary": "Binomial distribution X ~ Bin(n, p) applies to n independent trials with two outcomes (success/failure) and constant probability p. Mean = np, Variance = np(1-p)."
+      },
+      {
+        "id": "PAS-EXTRA-13",
+        "paper": "Final Exam Past Papers Compilation",
+        "questionNumber": 8,
+        "topic": "Discrete Distributions: Poisson Rate Process",
+        "marks": 10.0,
+        "difficulty": "Medium",
+        "prompt": "A web server receives on average $\\lambda = 4$ incoming API requests per minute. Assuming arrivals follow a Poisson distribution:\n\nWhat is the probability of receiving at most 1 request in a given minute?",
+        "type": "mcq",
+        "options": [
+          "0.0916",
+          "0.0183",
+          "0.0733",
+          "0.1465"
+        ],
+        "answer": 0,
+        "solution": "P(X <= 1) = P(X = 0) + P(X = 1). P(X = 0) = (e^-4 * 4^0) / 0! = e^-4 \u2248 0.0183. P(X = 1) = (e^-4 * 4^1) / 1! = 4 * 0.0183 = 0.0733. Total = 0.0183 + 0.0733 = 0.0916.",
+        "theorySummary": "Poisson distribution models event arrivals in a fixed interval of time or space: P(X = x) = (e^-\u03bb * \u03bb^x) / x!. Mean = \u03bb, Variance = \u03bb."
+      },
+      {
+        "id": "PAS-EXTRA-14",
+        "paper": "Lockdown Exam Revision",
+        "questionNumber": 9,
+        "topic": "Two-Sample t-Test for Independent Means",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "Two database index configurations A and B are evaluated for query latency. A sample of 15 queries on Index A gives $\\bar{x}_1 = 45\\text{ms}, s_1 = 6\\text{ms}$. A sample of 15 queries on Index B gives $\\bar{x}_2 = 52\\text{ms}, s_2 = 8\\text{ms}$. Assume equal population variances $\\sigma_1^2 = \\sigma_2^2$.\n\n1. Calculate the pooled variance estimate $s_p^2 = \\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}$.\n2. Calculate the calculated t-statistic $t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}$.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "Pooled variance sp^2:",
+            "type": "text",
+            "answer": "50",
+            "acceptedAnswers": [
+              "50",
+              "50.0"
+            ],
+            "hint": "sp^2 = [14(36) + 14(64)] / 28 = 14(100) / 28 = 50.0."
+          },
+          {
+            "id": "sq2",
+            "label": "Calculated t-statistic (round to 2 decimals):",
+            "type": "text",
+            "answer": "-2.71",
+            "acceptedAnswers": [
+              "-2.71",
+              "-2.7",
+              "2.71"
+            ],
+            "hint": "sp = \u221a50 = 7.071. SE = 7.071 * \u221a(2/15) = 7.071 * 0.36515 = 2.582. t = (45 - 52) / 2.582 = -7 / 2.582 = -2.71."
+          }
+        ],
+        "theorySummary": "When comparing two independent means with unknown but assumed equal variances, pool the sample variances: sp\u00b2 = [(n1-1)s1\u00b2 + (n2-1)s2\u00b2] / (n1+n2-2). Degrees of freedom df = n1 + n2 - 2."
+      },
+      {
+        "id": "PAS-EXTRA-15",
+        "paper": "Lockdown Exam Revision",
+        "questionNumber": 10,
+        "topic": "Simple Linear Regression & Coefficient of Determination",
+        "marks": 15.0,
+        "difficulty": "Hard",
+        "prompt": "In a regression study predicting system memory usage ($Y$, in GB) from concurrent user sessions ($X$), an analysis of variance (ANOVA) table yields:\n- Sum of Squares Regression ($SSR$) = 450\n- Sum of Squares Error ($SSE$) = 50\n- Total Sum of Squares ($SST$) = 500\n\n1. What is the coefficient of determination $R^2 = \\frac{SSR}{SST}$?\n2. What is the interpretation of this $R^2$ value?",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "R-squared value:",
+            "type": "text",
+            "answer": "0.9",
+            "acceptedAnswers": [
+              "0.9",
+              "0.90",
+              "90%"
+            ],
+            "hint": "R\u00b2 = 450 / 500 = 0.90."
+          },
+          {
+            "id": "sq2",
+            "label": "Interpretation:",
+            "type": "dropdown",
+            "options": [
+              "90% of the total variation in memory usage is explained by the number of concurrent sessions",
+              "The correlation coefficient between X and Y is exactly 0.90",
+              "There is a 90% chance that the regression slope is statistically significant",
+              "10% of memory usage is caused by user sessions"
+            ],
+            "answer": "90% of the total variation in memory usage is explained by the number of concurrent sessions",
+            "hint": "R\u00b2 measures the proportion of total variation in the dependent variable Y explained by the independent variable X."
+          }
+        ],
+        "theorySummary": "SST = SSR + SSE. The coefficient of determination R\u00b2 = SSR / SST = 1 - (SSE / SST) represents the fraction of variance explained by the model."
+      },
+      {
+        "id": "PAS-EXTRA-16",
+        "paper": "Lockdown Exam Revision",
+        "questionNumber": 11,
+        "topic": "One-Way ANOVA F-Test for Multiple Groups",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "An experiment compares the page load times across 3 different web browsers ($k = 3$) with 10 test runs per browser ($N = 30$).\nThe ANOVA results show:\n- Between-groups sum of squares ($SSB$) = 120\n- Within-groups sum of squares ($SSW$) = 270\n\nCalculate the F-test statistic: $F = \\frac{MSB}{MSW} = \\frac{SSB / (k-1)}{SSW / (N-k)}$.",
+        "type": "mcq",
+        "options": [
+          "6.00",
+          "4.50",
+          "2.25",
+          "0.44"
+        ],
+        "answer": 0,
+        "solution": "df_between = k - 1 = 3 - 1 = 2. MSB = 120 / 2 = 60. df_within = N - k = 30 - 3 = 27. MSW = 270 / 27 = 10. F = MSB / MSW = 60 / 10 = 6.00.",
+        "theorySummary": "One-Way ANOVA evaluates H0: \u03bc1 = \u03bc2 = ... = \u03bck vs H1: at least one mean differs. The test statistic F = MSB / MSW follows an F-distribution with (k-1, N-k) degrees of freedom."
+      },
+      {
+        "id": "PAS-EXTRA-17",
+        "paper": "Final Exam Past Papers Compilation",
+        "questionNumber": 12,
+        "topic": "Central Limit Theorem Properties",
+        "marks": 5.0,
+        "difficulty": "Medium",
+        "prompt": "According to the Central Limit Theorem (CLT), as the sample size $n$ increases ($n \\ge 30$), which of the following statements is TRUE regarding the sampling distribution of the sample mean $\\bar{X}$?",
+        "type": "mcq",
+        "options": [
+          "The sampling distribution approaches a Normal distribution with mean \u03bc and standard error \u03c3 / \u221an, regardless of the population distribution shape.",
+          "The standard error of the sample mean increases proportionally with the square root of n.",
+          "The sampling distribution becomes identical to the original population distribution.",
+          "CLT applies only when the underlying population is strictly normally distributed."
+        ],
+        "answer": 0,
+        "solution": "CLT states that for any population with mean \u03bc and finite variance \u03c3\u00b2, the distribution of X\u0304 approaches N(\u03bc, \u03c3\u00b2/n) as n becomes large (typically n >= 30).",
+        "theorySummary": "Central Limit Theorem is the foundation of inferential statistics. It ensures that sample means are normally distributed for large samples, with SE = \u03c3 / \u221an."
+      },
+      {
+        "id": "PAS-EXTRA-18",
+        "paper": "Lockdown Exam Revision",
+        "questionNumber": 13,
+        "topic": "Hypothesis Testing: Type I and Type II Errors",
+        "marks": 8.0,
+        "difficulty": "Hard",
+        "prompt": "In statistical hypothesis testing, rejecting the null hypothesis $H_0$ when $H_0$ is actually TRUE is known as:",
+        "type": "mcq",
+        "options": [
+          "Type I error (False Positive) with probability \u03b1",
+          "Type II error (False Negative) with probability \u03b2",
+          "Power of the test (1 - \u03b2)",
+          "Sampling error"
+        ],
+        "answer": 0,
+        "solution": "Type I error is the probability of rejecting a true null hypothesis, denoted by \u03b1 (the significance level). Type II error is failing to reject a false null hypothesis, denoted by \u03b2.",
+        "theorySummary": "Hypothesis testing decision grid: Reject H0 when true = Type I error (\u03b1). Fail to reject H0 when false = Type II error (\u03b2). Correctly rejecting false H0 = Power (1 - \u03b2)."
+      },
+      {
+        "id": "PAS-EXTRA-19",
+        "paper": "Final Exam Past Papers Compilation",
+        "questionNumber": 14,
+        "topic": "Simple Linear Regression Slope Formula",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "In simple linear regression $\\hat{y} = \\beta_0 + \\beta_1 x$, given the sample summary statistics:\n$n = 10, \\quad \\sum x = 50, \\quad \\sum y = 120, \\quad \\sum xy = 750, \\quad \\sum x^2 = 350$.\n\nCalculate the slope coefficient $\\beta_1 = \\frac{n \\sum xy - (\\sum x)(\\sum y)}{n \\sum x^2 - (\\sum x)^2}$.",
+        "type": "mcq",
+        "options": [
+          "1.50",
+          "2.40",
+          "0.75",
+          "-1.50"
+        ],
+        "answer": 0,
+        "solution": "Numerator = 10(750) - (50)(120) = 7500 - 6000 = 1500. Denominator = 10(350) - (50)^2 = 3500 - 2500 = 1000. \u03b21 = 1500 / 1000 = 1.50.",
+        "theorySummary": "The least-squares estimator minimizes the sum of squared vertical residuals \u03a3(y - \u0177)\u00b2. Slope \u03b21 = SSxy / SSxx, and intercept \u03b20 = y\u0304 - \u03b21 * x\u0304."
+      },
+      {
+        "id": "PAS-EXTRA-20",
+        "paper": "Final Exam Past Papers Compilation",
+        "questionNumber": 15,
+        "topic": "Paired Difference t-Test",
+        "marks": 10.0,
+        "difficulty": "Expert",
+        "prompt": "A paired-sample experiment measures execution time of 16 database queries before and after applying a query optimizer index. The sample mean difference is $\\bar{d} = 4.2\\text{ms}$ with standard deviation of differences $s_d = 2.4\\text{ms}$.\n\nCalculate the paired t-statistic $t = \\frac{\\bar{d}}{s_d / \\sqrt{n}}$ to test $H_0: \\mu_d = 0$.",
+        "type": "mcq",
+        "options": [
+          "7.00",
+          "1.75",
+          "3.50",
+          "4.20"
+        ],
+        "answer": 0,
+        "solution": "Standard error of difference SE = sd / \u221an = 2.4 / \u221a16 = 2.4 / 4 = 0.60. t = 4.2 / 0.60 = 7.00.",
+        "theorySummary": "Paired t-test is applied when observations are matched in pairs (e.g. before-after measurements on the same subject), reducing variance by controlling for subject heterogeneity."
+      }
+    ]
+  },
+  "AIML": {
+    "id": "AIML",
+    "code": "IT2011",
+    "title": "Artificial Intelligence and Machine Learning",
+    "semester": "Year 2, Semester 1",
+    "description": "Supervised/unsupervised learning, Gini index, K-Means clustering, evaluation metrics, deep neural network structures, and backpropagation.",
+    "icon": "brain",
+    "accent": "#7c3aed",
+    "papers": [
+      "2024 Final Revision Session",
+      "Deep Learning Structure Revision",
+      "Past Papers MCQ & Essay"
+    ],
+    "questions": [
+      {
+        "id": "AIML-01",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 1,
+        "topic": "Feature Classification (Numerical vs Categorical)",
+        "marks": 5.0,
+        "difficulty": "Medium",
+        "prompt": "Consider a dataset representing 10 students' performance with the following features:\n- Study Hours (weekly average hours studied)\n- Attendance Percentage (percentage of classes attended)\n- Previous Exam Score (out of 100)\n- Gender (Male or Female)\n- Extracurricular Activities (Yes or No)\n- Result (Pass or Fail)\n\nIdentify the correct classification for these feature attributes:",
+        "type": "mcq",
+        "options": [
+          "Numerical: Study Hours, Attendance Percentage, Previous Exam Score; Categorical: Gender, Extracurricular Activities, Result",
+          "Numerical: Study Hours, Gender; Categorical: Attendance Percentage, Previous Exam Score, Result",
+          "Numerical: Previous Exam Score, Result; Categorical: Study Hours, Attendance Percentage, Gender",
+          "All features in this dataset are Numerical features"
+        ],
+        "answer": 0,
+        "solution": "Numerical features represent measurable quantities with arithmetic meaning (Study Hours, Attendance Percentage, Exam Score). Categorical features represent qualitative labels or groups (Gender: Male/Female; Extracurricular: Yes/No; Result: Pass/Fail).",
+        "theorySummary": "Features in machine learning are broadly split into Numerical (continuous or discrete values allowing mathematical operations) and Categorical (nominal labels without intrinsic ordering or ordinal ranks)."
+      },
+      {
+        "id": "AIML-02",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 2,
+        "topic": "Decision Trees: Gini Impurity Calculation",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "For the student performance dataset, the overall target 'Result' has 5 Pass and 5 Fail instances (Total = 10).\n\nFormula for Gini Impurity: $\\text{Gini}(D) = 1 - \\sum_{i=1}^C p_i^2$.\n\nWhen splitting on 'Gender':\n- Male (6 students): 3 Pass, 3 Fail\n- Female (4 students): 2 Pass, 2 Fail\n\nCalculate the weighted Gini Index for the feature 'Gender'.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. Gini impurity of the root node before splitting:",
+            "type": "text",
+            "answer": "0.5",
+            "acceptedAnswers": [
+              "0.5",
+              "0.50"
+            ],
+            "hint": "Gini(Root) = 1 - [(5/10)\u00b2 + (5/10)\u00b2] = 1 - [0.25 + 0.25] = 0.50."
+          },
+          {
+            "id": "sq2",
+            "label": "2. Gini impurity for Male subset (3 Pass, 3 Fail):",
+            "type": "text",
+            "answer": "0.5",
+            "acceptedAnswers": [
+              "0.5",
+              "0.50"
+            ],
+            "hint": "Gini(Male) = 1 - [(3/6)\u00b2 + (3/6)\u00b2] = 1 - [0.25 + 0.25] = 0.50."
+          },
+          {
+            "id": "sq3",
+            "label": "3. Gini impurity for Female subset (2 Pass, 2 Fail):",
+            "type": "text",
+            "answer": "0.5",
+            "acceptedAnswers": [
+              "0.5",
+              "0.50"
+            ],
+            "hint": "Gini(Female) = 1 - [(2/4)\u00b2 + (2/4)\u00b2] = 1 - [0.25 + 0.25] = 0.50."
+          },
+          {
+            "id": "sq4",
+            "label": "4. Weighted Gini Index for Gender split:",
+            "type": "text",
+            "answer": "0.5",
+            "acceptedAnswers": [
+              "0.5",
+              "0.50"
+            ],
+            "hint": "Gini_split = (6/10) * 0.5 + (4/10) * 0.5 = 0.50. Information Gain = 0.50 - 0.50 = 0 (Gender provides no purity improvement!)."
+          }
+        ],
+        "theorySummary": "The CART algorithm uses the Gini index to choose best splits. Maximum impurity occurs at 0.5 (equal distribution across binary classes), while pure nodes have Gini = 0. A split that yields 0 information gain is ineffective."
+      },
+      {
+        "id": "AIML-03",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 3,
+        "topic": "K-Means Clustering & Euclidean Distance",
+        "marks": 15.0,
+        "difficulty": "Hard",
+        "prompt": "In an unsupervised learning task, two initial cluster centroids are chosen: $C_1 = (2, 3)$ and $C_2 = (6, 7)$. A new data point is $P = (3, 5)$.\n\n1. What is the Euclidean distance from $P$ to $C_1$?\n2. What is the Euclidean distance from $P$ to $C_2$?\n3. Which cluster should point $P$ be assigned to?",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "Distance to C1 (2, 3):",
+            "instruction": "(Round off to two decimal places)",
+            "type": "text",
+            "answer": "2.24",
+            "acceptedAnswers": [
+              "2.24",
+              "2.236"
+            ],
+            "hint": "d(P, C1) = \u221a[(3 - 2)\u00b2 + (5 - 3)\u00b2] = \u221a[1 + 4] = \u221a5 \u2248 2.236."
+          },
+          {
+            "id": "sq2",
+            "label": "Distance to C2 (6, 7):",
+            "instruction": "(Round off to two decimal places)",
+            "type": "text",
+            "answer": "3.61",
+            "acceptedAnswers": [
+              "3.61",
+              "3.605"
+            ],
+            "hint": "d(P, C2) = \u221a[(3 - 6)\u00b2 + (5 - 7)\u00b2] = \u221a[(-3)\u00b2 + (-2)\u00b2] = \u221a[9 + 4] = \u221a13 \u2248 3.605."
+          },
+          {
+            "id": "sq3",
+            "label": "Cluster Assignment:",
+            "type": "dropdown",
+            "options": [
+              "Cluster 1 (Centroid C1)",
+              "Cluster 2 (Centroid C2)",
+              "Equally shared between both clusters"
+            ],
+            "answer": "Cluster 1 (Centroid C1)",
+            "hint": "Point P is assigned to the nearest centroid: 2.24 < 3.61."
+          }
+        ],
+        "theorySummary": "K-Means iteratively partitions data into K clusters by assigning each point to its nearest centroid using distance metrics (typically Euclidean distance d = \u221a\u2211(x_i - y_i)\u00b2), then recalculating centroids as cluster means."
+      },
+      {
+        "id": "AIML-04",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 4,
+        "topic": "Model Evaluation Metrics & Confusion Matrix",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "A binary classification model evaluated on 100 test samples produces the following confusion matrix:\n- True Positives (TP) = 40\n- False Positives (FP) = 10\n- True Negatives (TN) = 40\n- False Negatives (FN) = 10\n\nCalculate the Precision, Recall, Accuracy, and F1-Score of this model.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "Accuracy:",
+            "type": "text",
+            "answer": "0.8",
+            "acceptedAnswers": [
+              "0.8",
+              "0.80",
+              "80%"
+            ],
+            "hint": "Accuracy = (TP + TN) / Total = (40 + 40) / 100 = 0.80 (80%)."
+          },
+          {
+            "id": "sq2",
+            "label": "Precision:",
+            "type": "text",
+            "answer": "0.8",
+            "acceptedAnswers": [
+              "0.8",
+              "0.80",
+              "80%"
+            ],
+            "hint": "Precision = TP / (TP + FP) = 40 / (40 + 10) = 40 / 50 = 0.80 (80%)."
+          },
+          {
+            "id": "sq3",
+            "label": "Recall (Sensitivity):",
+            "type": "text",
+            "answer": "0.8",
+            "acceptedAnswers": [
+              "0.8",
+              "0.80",
+              "80%"
+            ],
+            "hint": "Recall = TP / (TP + FN) = 40 / (40 + 10) = 40 / 50 = 0.80 (80%)."
+          },
+          {
+            "id": "sq4",
+            "label": "F1-Score:",
+            "type": "text",
+            "answer": "0.8",
+            "acceptedAnswers": [
+              "0.8",
+              "0.80"
+            ],
+            "hint": "F1 = 2 * (Precision * Recall) / (Precision + Recall) = 2 * (0.8 * 0.8) / 1.6 = 0.80."
+          }
+        ],
+        "theorySummary": "Precision evaluates how many of the positively predicted instances were actually correct. Recall evaluates how many of the actual positive cases the model captured. F1-score provides the harmonic mean."
+      },
+      {
+        "id": "AIML-05",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 5,
+        "topic": "Neural Network Forward Propagation & Activation Functions",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "An artificial neuron has two inputs $x_1 = 0.6$ and $x_2 = 0.8$ with associated synaptic weights $w_1 = 0.5$ and $w_2 = -0.25$, and a bias $b = 0.1$.\n\n1. Calculate the linear weighted sum (pre-activation) $z = w_1 x_1 + w_2 x_2 + b$.\n2. If the activation function is the Sigmoid function $\\sigma(z) = \\frac{1}{1 + e^{-z}}$, calculate the final output $\\hat{y}$.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "Pre-activation value z:",
+            "type": "text",
+            "answer": "0.2",
+            "acceptedAnswers": [
+              "0.2",
+              "0.20"
+            ],
+            "hint": "z = (0.5 * 0.6) + (-0.25 * 0.8) + 0.1 = 0.30 - 0.20 + 0.10 = 0.20."
+          },
+          {
+            "id": "sq2",
+            "label": "Sigmoid output \u03c3(z):",
+            "instruction": "(Round off to four decimal places)",
+            "type": "text",
+            "answer": "0.5498",
+            "acceptedAnswers": [
+              "0.5498",
+              "0.55"
+            ],
+            "hint": "\u03c3(0.20) = 1 / (1 + e^(-0.20)) = 1 / (1 + 0.8187) = 1 / 1.8187 \u2248 0.5498."
+          }
+        ],
+        "theorySummary": "In neural networks, each layer computes a linear combination z = Wx + b followed by a non-linear activation function f(z). Sigmoid squashes real numbers into (0, 1), making it ideal for probability estimation."
+      },
+      {
+        "id": "AIML-06",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 6,
+        "topic": "Hierarchical Clustering & Linkage Metrics",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "In Agglomerative Hierarchical Clustering, what is the key distinction between Single Linkage and Complete Linkage when measuring distance between two clusters $A$ and $B$?",
+        "type": "mcq",
+        "options": [
+          "Single Linkage uses the minimum pairwise distance min d(x, y), whereas Complete Linkage uses the maximum pairwise distance max d(x, y)",
+          "Single Linkage uses cluster centroids, whereas Complete Linkage uses the average of all pairs",
+          "Single Linkage creates a single cluster, whereas Complete Linkage creates completely separated clusters",
+          "Single Linkage is non-hierarchical, whereas Complete Linkage is hierarchical"
+        ],
+        "answer": 0,
+        "solution": "Single Linkage (minimum distance) merges clusters whose closest points are nearest (susceptible to chaining). Complete Linkage (maximum distance) considers the furthest points, producing compact spherical clusters.",
+        "theorySummary": "Agglomerative clustering is bottom-up. Linkage criteria: Single (min distance), Complete (max distance), Average (mean distance), Ward's (minimum variance increase)."
+      },
+      {
+        "id": "AIML-07",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 7,
+        "topic": "Feature Scaling: Min-Max vs Z-Score Normalization",
+        "marks": 10.0,
+        "difficulty": "Medium",
+        "prompt": "A feature $X$ has minimum value $X_{\\min} = 20$, maximum value $X_{\\max} = 100$, mean $\\mu = 50$, and standard deviation $\\sigma = 15$.\nFor an observed value $x = 60$:\n\n1. Calculate the Min-Max scaled value $x' = \\frac{x - X_{\\min}}{X_{\\max} - X_{\\min}}$.\n2. Calculate the Z-score standardized value $z = \\frac{x - \\mu}{\\sigma}$.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "Min-Max scaled value (in [0, 1]):",
+            "type": "text",
+            "answer": "0.5",
+            "acceptedAnswers": [
+              "0.5",
+              "0.50"
+            ],
+            "hint": "x' = (60 - 20) / (100 - 20) = 40 / 80 = 0.50."
+          },
+          {
+            "id": "sq2",
+            "label": "Z-score standardized value (round to 2 decimals):",
+            "type": "text",
+            "answer": "0.67",
+            "acceptedAnswers": [
+              "0.67",
+              "0.667"
+            ],
+            "hint": "z = (60 - 50) / 15 = 10 / 15 = 0.67."
+          }
+        ],
+        "theorySummary": "Min-Max scaling bounds data strictly to [0, 1]. Z-score standardization centers data at mean 0 with unit variance, preserving outlier information."
+      },
+      {
+        "id": "AIML-08",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 8,
+        "topic": "Activation Functions: Dying ReLU Problem",
+        "marks": 8.0,
+        "difficulty": "Hard",
+        "prompt": "What causes the 'Dying ReLU' problem in deep neural networks, and how does Leaky ReLU address it?",
+        "type": "mcq",
+        "options": [
+          "For inputs z <= 0, standard ReLU has gradient 0, preventing weight updates; Leaky ReLU allows a small positive slope (e.g. 0.01z) for z < 0.",
+          "Standard ReLU produces values greater than 1, causing exploding gradients.",
+          "ReLU cannot be computed using GPU hardware accelerators.",
+          "Dying ReLU occurs only during inference, not during training."
+        ],
+        "answer": 0,
+        "solution": "ReLU(z) = max(0, z). When z <= 0, its derivative is 0. If a neuron's weights update such that it always receives negative input, it never activates again. Leaky ReLU introduces a small gradient \u03b1 for negative inputs.",
+        "theorySummary": "ReLU f(z) = max(0, z) accelerates training by solving vanishing gradients for positive inputs, but can suffer from dead neurons. Variants like Leaky ReLU and ELU provide nonzero gradients for negative inputs."
+      },
+      {
+        "id": "AIML-09",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 9,
+        "topic": "Convolutional Neural Networks: Output Feature Map Size",
+        "marks": 12.0,
+        "difficulty": "Expert",
+        "prompt": "An input image of size $32 \\times 32$ is passed through a convolutional layer with $5 \\times 5$ filters, stride $S = 1$, and zero padding $P = 2$.\n\nCalculate the spatial dimensions $(W_{\\text{out}} \\times H_{\\text{out}})$ of the output feature map using the formula: $W_{\\text{out}} = \\frac{W_{\\text{in}} - F + 2P}{S} + 1$.",
+        "type": "mcq",
+        "options": [
+          "32 x 32 (Same padding preserves spatial dimension)",
+          "28 x 28",
+          "30 x 30",
+          "36 x 36"
+        ],
+        "answer": 0,
+        "solution": "W_out = (32 - 5 + 2*2) / 1 + 1 = (32 - 5 + 4) + 1 = 31 + 1 = 32. Dimensions are 32 x 32.",
+        "theorySummary": "Convolutional feature map spatial dimensions depend on input size, kernel size F, stride S, and padding P. Padding P = (F-1)/2 maintains identical dimensions."
+      },
+      {
+        "id": "AIML-10",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 10,
+        "topic": "Pooling Layers: Max Pooling vs Average Pooling",
+        "marks": 6.0,
+        "difficulty": "Medium",
+        "prompt": "In CNNs, what is the primary role of a $2 \\times 2$ Max Pooling layer with stride 2?",
+        "type": "mcq",
+        "options": [
+          "Downsample spatial dimensions by 50%, reducing parameter count and computational load while providing translational invariance.",
+          "Increase the number of channel filters in the network.",
+          "Normalize activations across the mini-batch.",
+          "Perform non-linear activation like Sigmoid."
+        ],
+        "answer": 0,
+        "solution": "Max pooling extracts the maximum value in each 2x2 neighborhood, halving width and height, reducing memory and computation, and retaining dominant features.",
+        "theorySummary": "Pooling layers downsample feature maps without adding learnable parameters, enhancing spatial invariance and reducing overfitting."
+      },
+      {
+        "id": "AIML-11",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 11,
+        "topic": "Gradient Descent Optimization & Learning Rate",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "A single weight $w$ in a model currently has value $w = 2.0$. The gradient of the loss function with respect to $w$ is $\\frac{\\partial L}{\\partial w} = 3.5$. The learning rate is $\\eta = 0.1$.\n\nCalculate the updated weight value $w_{\\text{new}} = w - \\eta \\frac{\\partial L}{\\partial w}$.",
+        "type": "mcq",
+        "options": [
+          "1.65",
+          "2.35",
+          "1.50",
+          "-1.50"
+        ],
+        "answer": 0,
+        "solution": "w_new = 2.0 - 0.1 * (3.5) = 2.0 - 0.35 = 1.65.",
+        "theorySummary": "Gradient descent updates parameters in the direction opposite to the gradient: \u03b8 = \u03b8 - \u03b7 * \u2207L. Small learning rates cause slow convergence; large rates cause divergence."
+      },
+      {
+        "id": "AIML-12",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 12,
+        "topic": "Regularization: Dropout in Deep Networks",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "How does Dropout regularization prevent overfitting during the training phase of a deep neural network?",
+        "type": "mcq",
+        "options": [
+          "It randomly deactivates a fraction p of neurons during each forward pass, forcing network units to learn co-independent features.",
+          "It adds the sum of squared weights to the loss function.",
+          "It clamps all negative weights to zero.",
+          "It normalizes inputs to have mean zero."
+        ],
+        "answer": 0,
+        "solution": "Dropout temporarily removes random units (and their incoming/outgoing edges) with probability p during training, preventing complex co-adaptations between neurons.",
+        "theorySummary": "Dropout acts as an ensemble of exponentially many thinned networks. During evaluation/inference, all units are active, scaled by (1 - p)."
+      },
+      {
+        "id": "AIML-13",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 13,
+        "topic": "Ensemble Learning: Bagging vs Boosting",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "What is the key structural difference between Random Forests (Bagging) and Gradient Boosting Machines (Boosting)?",
+        "type": "mcq",
+        "options": [
+          "Random Forests train trees independently in parallel on bootstrap samples; Boosting trains trees sequentially, each correcting the residual errors of prior trees.",
+          "Random Forests are for classification only; Boosting is for regression only.",
+          "Random Forests use deep neural nets as base learners; Boosting uses linear models.",
+          "Boosting reduces variance only, while Bagging reduces bias only."
+        ],
+        "answer": 0,
+        "solution": "Bagging (Bootstrap Aggregating) trains models independently in parallel to reduce variance. Boosting builds models iteratively in sequence to reduce bias.",
+        "theorySummary": "Bagging builds independent models on random subsets and averages predictions. Boosting assigns higher weights to misclassified instances to iteratively correct errors."
+      },
+      {
+        "id": "AIML-14",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 14,
+        "topic": "Support Vector Machines (SVM): Hyperplane Margin",
+        "marks": 10.0,
+        "difficulty": "Expert",
+        "prompt": "In a linear Support Vector Machine with separating hyperplane $\\mathbf{w}^T \\mathbf{x} + b = 0$, what is the geometric margin distance between the two canonical support vector hyperplanes $\\mathbf{w}^T \\mathbf{x} + b = 1$ and $\\mathbf{w}^T \\mathbf{x} + b = -1$?",
+        "type": "mcq",
+        "options": [
+          "2 / ||w||",
+          "1 / ||w||^2",
+          "||w|| / 2",
+          "w^T w"
+        ],
+        "answer": 0,
+        "solution": "The perpendicular distance between the positive margin hyperplane and negative margin hyperplane is 2 / ||w||. Maximizing the margin corresponds to minimizing (1/2)||w||\u00b2.",
+        "theorySummary": "SVM searches for the Maximum Margin Hyperplane that maximizes distance to the closest training points (support vectors), providing strong generalization guarantees."
+      },
+      {
+        "id": "AIML-15",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 15,
+        "topic": "Loss Functions: Binary Cross-Entropy",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "For a binary classification instance with ground truth label $y = 1$, the model outputs predicted probability $\\hat{y} = 0.8$. Calculate the Binary Cross-Entropy loss $L = -[y \\ln(\\hat{y}) + (1-y) \\ln(1-\\hat{y})]$. (Given $\\ln(0.8) \\approx -0.2231$).",
+        "type": "mcq",
+        "options": [
+          "0.2231",
+          "0.8000",
+          "0.5108",
+          "1.6094"
+        ],
+        "answer": 0,
+        "solution": "Since y = 1, L = -[1 * ln(0.8) + 0] = -(-0.2231) = 0.2231.",
+        "theorySummary": "Cross-Entropy loss penalizes confident wrong predictions severely (as \u0177 -> 0 when y = 1, loss -> \u221e), ensuring steep gradients during backpropagation."
+      },
+      {
+        "id": "AIML-16",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 16,
+        "topic": "Vanishing Gradient Problem in Deep Networks",
+        "marks": 10.0,
+        "difficulty": "Expert",
+        "prompt": "Why does the standard Sigmoid activation function $\\sigma(z) = \\frac{1}{1 + e^{-z}}$ cause the Vanishing Gradient problem during backpropagation in deep neural networks?",
+        "type": "mcq",
+        "options": [
+          "The derivative of Sigmoid is bounded by a maximum of 0.25 (when z = 0). Multiplying many fractions <= 0.25 through multiple layers drives gradients exponentially toward 0.",
+          "Sigmoid values can become negative, causing calculations to abort.",
+          "Sigmoid functions cannot be computed on modern GPUs.",
+          "The derivative is always greater than 1, causing exploding gradients."
+        ],
+        "answer": 0,
+        "solution": "d\u03c3/dz = \u03c3(z)(1 - \u03c3(z)). The maximum value of this derivative is 0.25 at z = 0. In deep networks, the chain rule multiplies these gradients across layers, leading to near-zero gradients at early layers.",
+        "theorySummary": "Vanishing gradients prevent early layers from learning effectively. Non-saturating activations like ReLU and Residual Connections (ResNets) solve this."
+      },
+      {
+        "id": "AIML-17",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 17,
+        "topic": "Evaluation Metrics: ROC Curve and AUC",
+        "marks": 8.0,
+        "difficulty": "Hard",
+        "prompt": "In a Receiver Operating Characteristic (ROC) curve, what are the axes plotted, and what does an Area Under the Curve (AUC) of 0.5 represent?",
+        "type": "mcq",
+        "options": [
+          "Y-axis: True Positive Rate (Sensitivity); X-axis: False Positive Rate (1 - Specificity). An AUC of 0.5 indicates random guessing performance.",
+          "Y-axis: Precision; X-axis: Recall. AUC of 0.5 indicates perfect performance.",
+          "Y-axis: Accuracy; X-axis: Loss. AUC of 0.5 represents a balanced dataset.",
+          "Y-axis: Training error; X-axis: Validation error."
+        ],
+        "answer": 0,
+        "solution": "The ROC curve plots TPR vs FPR across all classification thresholds. An AUC of 1.0 is perfect; 0.5 represents a worthless classifier no better than flipping a coin.",
+        "theorySummary": "ROC-AUC evaluates ranking quality independently of classification threshold and class imbalance."
+      },
+      {
+        "id": "AIML-18",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 18,
+        "topic": "Regularization: L1 (Lasso) vs L2 (Ridge)",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "Why does L1 regularization (Lasso: penalty $\\lambda \\sum |w_i|$) produce sparse models (setting some weight coefficients exactly to zero), whereas L2 regularization (Ridge: penalty $\\lambda \\sum w_i^2$) does not?",
+        "type": "mcq",
+        "options": [
+          "The L1 diamond-shaped constraint boundary has sharp corners along the axes, where contours of the objective function frequently intersect at w_i = 0.",
+          "L1 regularization uses smaller learning rates.",
+          "L2 regularization eliminates more features than L1.",
+          "L1 regularization is computationally impossible to solve."
+        ],
+        "answer": 0,
+        "solution": "The geometric contour of the L1 penalty |w1| + |w2| <= t is a diamond with corners on axes, causing intersections where non-critical weights become exactly 0 (performing automatic feature selection).",
+        "theorySummary": "L1 (Lasso) yields sparse models and feature selection. L2 (Ridge) shrinks weights smoothly toward zero without setting them exactly to zero."
+      },
+      {
+        "id": "AIML-19",
+        "paper": "Deep Learning Structure Revision",
+        "questionNumber": 19,
+        "topic": "Multi-Class Classification: Softmax Output",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "A neural network's final output layer produces unnormalized logits: $z_1 = 1.0, z_2 = 2.0, z_3 = 3.0$.\n\nCalculate the Softmax probability for class 3: $P(y = 3) = \\frac{e^{z_3}}{\\sum_{j=1}^3 e^{z_j}}$.\n(Given: $e^1 \\approx 2.72, e^2 \\approx 7.39, e^3 \\approx 20.09$).",
+        "type": "mcq",
+        "options": [
+          "0.665",
+          "0.333",
+          "0.245",
+          "0.500"
+        ],
+        "answer": 0,
+        "solution": "Sum of exponentials = 2.718 + 7.389 + 20.086 = 30.193. Softmax(z3) = 20.086 / 30.193 = 0.665 (66.5%).",
+        "theorySummary": "Softmax transforms K unnormalized real scores into a valid probability distribution where each p_i in (0, 1) and \u03a3 p_i = 1."
+      },
+      {
+        "id": "AIML-20",
+        "paper": "2024 Final Revision Session",
+        "questionNumber": 20,
+        "topic": "Bias-Variance Tradeoff & Model Complexity",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "Which of the following conditions characterizes a machine learning model suffering from HIGH VARIANCE (Overfitting)?",
+        "type": "mcq",
+        "options": [
+          "Near-zero training error combined with significantly higher error on the validation/test set.",
+          "High error on both training data and validation data.",
+          "The model is too simple to capture underlying patterns.",
+          "The model's predictions never change across different training subsets."
+        ],
+        "answer": 0,
+        "solution": "High variance means the model fits training data noise too closely, performing exceptionally on training data but generalizing poorly to unseen validation data.",
+        "theorySummary": "Total Error = Bias\u00b2 + Variance + Irreducible Error. High Bias = underfitting (oversimplified model). High Variance = overfitting (memorizing training noise)."
+      }
+    ]
+  },
+  "DDD": {
+    "id": "DDD",
+    "code": "IT2040 / IT2140",
+    "title": "Database Design and Development",
+    "semester": "Year 2, Semester 1",
+    "description": "EER to relational mapping, functional dependencies, 2NF/3NF/BCNF normalization, transaction ACID, 2PL concurrency, and SQL procedures.",
+    "icon": "database",
+    "accent": "#2563eb",
+    "papers": [
+      "2024 Final Examination",
+      "2023 Final Examination",
+      "2022 Final Examination",
+      "Lockdown Compilation"
+    ],
+    "questions": [
+      {
+        "id": "DDD-01",
+        "paper": "2024 Final Examination",
+        "questionNumber": 1,
+        "topic": "EER to Relational Schema Mapping (ISA Hierarchy)",
+        "marks": 20.0,
+        "difficulty": "Hard",
+        "prompt": "Consider an Enhanced Entity-Relationship (EER) model with a superclass `Employee` and subclasses `SalariedEmployee` and `HourlyEmployee`. The specialization is specified as {disjoint, total}.\n\nWhich of the following is the most appropriate relational schema design when all subclasses have distinct specific attributes and all employees must belong to exactly one subclass?",
+        "type": "mcq",
+        "options": [
+          "Option A: Two distinct relations `SalariedEmployee` and `HourlyEmployee`, each inheriting all attributes of `Employee` as primary relation columns (No superclass relation).",
+          "Option B: A single wide relation with all superclass and subclass attributes, adding a `type` discriminator attribute and allowing NULL values for inactive subclass columns.",
+          "Option C: Three relations (`Employee`, `SalariedEmployee`, `HourlyEmployee`) linked via foreign key references on EmployeeID.",
+          "Option D: A single relation containing only EmployeeID and name with no specialized attributes."
+        ],
+        "answer": 0,
+        "solution": "When specialization is total (every entity belongs to a subclass) and disjoint (no entity belongs to more than one subclass), mapping to separate subclass relations that include all superclass attributes avoids NULL values and avoids unnecessary table joins.",
+        "theorySummary": "ISA mapping strategies: 1. Multiple relations for subclasses only (optimal for total, disjoint). 2. Single relation with type flag (best for disjoint with few specific attributes). 3. Superclass + subclass relations (standard, works for any constraint)."
+      },
+      {
+        "id": "DDD-02",
+        "paper": "2023 Final Examination",
+        "questionNumber": 2,
+        "topic": "Functional Dependencies, Minimal Cover & Candidate Keys",
+        "marks": 20.0,
+        "difficulty": "Expert",
+        "prompt": "A relational schema $R(A, B, C, D, E)$ has the following set of functional dependencies $F$:\n$F = \\{ A \\rightarrow B, \\quad BC \\rightarrow D, \\quad E \\rightarrow C \\}$\n\n1. What is the attribute closure of $(A, E)$ denoted as $(AE)^+$?\n2. What is the candidate key for relation $R$?",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. Attribute closure (AE)+:",
+            "type": "dropdown",
+            "options": [
+              "{A, B, C, D, E} (All attributes)",
+              "{A, B, E}",
+              "{A, B, C, E}",
+              "{A, E}"
+            ],
+            "answer": "{A, B, C, D, E} (All attributes)",
+            "hint": "Start with {A, E}. Using A -> B adds B -> {A, B, E}. Using E -> C adds C -> {A, B, C, E}. Using BC -> D adds D -> {A, B, C, D, E}."
+          },
+          {
+            "id": "sq2",
+            "label": "2. Candidate Key:",
+            "type": "dropdown",
+            "options": [
+              "AE",
+              "A",
+              "ABC",
+              "ADE"
+            ],
+            "answer": "AE",
+            "hint": "Since (AE)+ contains all attributes of R and neither A nor E can be removed without losing closure, AE is the minimal superkey (Candidate Key)."
+          }
+        ],
+        "theorySummary": "Attribute closure X+ is the set of all attributes functionally determined by X under F. If X+ = R and no proper subset of X determines R, then X is a candidate key."
+      },
+      {
+        "id": "DDD-03",
+        "paper": "2022 Final Examination",
+        "questionNumber": 3,
+        "topic": "Normalization: 3NF vs BCNF Decomposition",
+        "marks": 20.0,
+        "difficulty": "Expert",
+        "prompt": "Consider relation $R(A, B, C)$ with functional dependencies $F = \\{ AB \\rightarrow C, \\quad C \\rightarrow B \\}$.\n\n1. What are the candidate keys for relation $R$?\n2. In what normal form is relation $R$ currently in?\n3. Does relation $R$ satisfy Boyce-Codd Normal Form (BCNF)?",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "1. Candidate keys of R:",
+            "type": "dropdown",
+            "options": [
+              "AB and AC",
+              "AB only",
+              "C only",
+              "BC only"
+            ],
+            "answer": "AB and AC",
+            "hint": "(AB)+ = {A, B, C}. Since C -> B, (AC)+ = {A, C, B} = {A, B, C}. Both AB and AC are candidate keys."
+          },
+          {
+            "id": "sq2",
+            "label": "2. Highest Normal Form satisfied:",
+            "type": "dropdown",
+            "options": [
+              "Third Normal Form (3NF)",
+              "Boyce-Codd Normal Form (BCNF)",
+              "Second Normal Form (2NF)",
+              "First Normal Form (1NF)"
+            ],
+            "answer": "Third Normal Form (3NF)",
+            "hint": "For C -> B: C is not a superkey, but B is a prime attribute (part of candidate key AB). Therefore, R satisfies 3NF."
+          },
+          {
+            "id": "sq3",
+            "label": "3. Does it satisfy BCNF?",
+            "type": "dropdown",
+            "options": [
+              "No, because in C -> B, C is not a superkey",
+              "Yes, every 3NF relation is in BCNF",
+              "Yes, because C is a candidate key",
+              "No, because it violates 1NF"
+            ],
+            "answer": "No, because in C -> B, C is not a superkey",
+            "hint": "BCNF strictly requires the determinant X in every non-trivial FD X -> Y to be a superkey."
+          }
+        ],
+        "theorySummary": "A relation is in 3NF if for every X -> Y, X is a superkey OR Y is a prime attribute. BCNF is stricter: X MUST be a superkey (no prime attribute exception)."
+      },
+      {
+        "id": "DDD-04",
+        "paper": "Lockdown Compilation",
+        "questionNumber": 4,
+        "topic": "Transaction Concurrency & Two-Phase Locking (2PL)",
+        "marks": 15.0,
+        "difficulty": "Hard",
+        "prompt": "Which of the following statements regarding Two-Phase Locking (2PL) and Serializability is TRUE?",
+        "type": "mcq",
+        "options": [
+          "Basic 2PL guarantees conflict serializability, but it does NOT prevent cascading rollbacks or deadlocks.",
+          "Basic 2PL prevents deadlocks automatically without requiring timestamps or lock timeouts.",
+          "Strict 2PL releases all exclusive (X) locks as soon as the growing phase finishes.",
+          "Rigorous 2PL requires all shared (S) locks to be released before the transaction commits."
+        ],
+        "answer": 0,
+        "solution": "Basic 2PL guarantees that every valid schedule is conflict-serializable (no cycles in precedence graph). However, transactions may still reach deadlock or suffer cascading aborts. Strict 2PL prevents cascading aborts by holding exclusive locks until commit/abort.",
+        "theorySummary": "Two-Phase Locking (2PL) has a Growing Phase (locks acquired, none released) and a Shrinking Phase (locks released, none acquired). Conflict serializability is guaranteed, but deadlock detection/prevention is still needed."
+      },
+      {
+        "id": "DDD-05",
+        "paper": "2023 Final Examination",
+        "questionNumber": 5,
+        "topic": "EER Specialization: Disjoint vs Overlapping Constraints",
+        "marks": 12.0,
+        "difficulty": "Medium",
+        "prompt": "In the 2023 Final Exam EER model, an entity `AcademicStaff` has subclasses `Supervisor` and `PanelMember` with the constraint `{overlap}`. What does the `{overlap}` constraint mean?",
+        "type": "mcq",
+        "options": [
+          "A single academic staff member can simultaneously act as both a Supervisor and a Panel Member.",
+          "An academic staff member must be either a Supervisor or a Panel Member, but cannot be both.",
+          "All academic staff members must be supervisors.",
+          "Supervisors and Panel Members must have the exact same attributes."
+        ],
+        "answer": 0,
+        "solution": "Overlapping specialization allows an entity instance to be a member of more than one subclass simultaneously. In contrast, disjoint ({d}) requires mutual exclusivity.",
+        "theorySummary": "EER constraints include Disjointness (Disjoint vs Overlap) and Completeness (Total vs Partial participation)."
+      },
+      {
+        "id": "DDD-06",
+        "paper": "2023 Final Examination",
+        "questionNumber": 6,
+        "topic": "Relational Synthesis: Candidate Key Derivation",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "Consider relation $R(A, B, C, D, E, F, G)$ with functional dependencies:\n$F = \\{ A \\rightarrow BC, \\quad B \\rightarrow D, \\quad C \\rightarrow EF, \\quad AC \\rightarrow G \\}$\n\nFind the candidate key for relation $R$ using the attribute closure method.",
+        "type": "mcq",
+        "options": [
+          "A",
+          "AB",
+          "AC",
+          "ABC"
+        ],
+        "answer": 0,
+        "solution": "Compute A+: Start with {A}. A -> BC adds B, C -> {A, B, C}. B -> D adds D -> {A, B, C, D}. C -> EF adds E, F -> {A, B, C, D, E, F}. AC -> G adds G -> {A, B, C, D, E, F, G}. Since A+ contains all attributes, A is the unique Candidate Key.",
+        "theorySummary": "If a single attribute's closure contains all attributes of R, that single attribute is a minimal candidate key and no composite key containing it can be minimal."
+      },
+      {
+        "id": "DDD-07",
+        "paper": "2023 Final Examination",
+        "questionNumber": 7,
+        "topic": "Normalization: Testing 3NF and BCNF Violations",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "For relation $R(A, B, C, D, E, F, G)$ with candidate key $A$ and functional dependencies:\n$A \\rightarrow BC, \\quad B \\rightarrow D, \\quad C \\rightarrow EF, \\quad AC \\rightarrow G$.\n\nIs relation $R$ in 3NF, and why?",
+        "type": "mcq",
+        "options": [
+          "No, because B -> D and C -> EF represent transitive dependencies where the determinant is not a superkey and the right-hand side is not prime.",
+          "Yes, because A is a candidate key.",
+          "Yes, because all functional dependencies are non-trivial.",
+          "No, because it violates 1NF atomicity."
+        ],
+        "answer": 0,
+        "solution": "3NF requires that for every non-trivial X -> Y, X is a superkey OR Y is a prime attribute. In B -> D, B is not a superkey and D is not part of any candidate key (not prime). This is a transitive dependency violating 3NF.",
+        "theorySummary": "2NF eliminates partial dependencies on composite keys. 3NF eliminates transitive dependencies (non-key determining non-key)."
+      },
+      {
+        "id": "DDD-08",
+        "paper": "2023 Final Examination",
+        "questionNumber": 8,
+        "topic": "SQL Server Security: Fixed Server Roles",
+        "marks": 10.0,
+        "difficulty": "Medium",
+        "prompt": "In Microsoft SQL Server / T-SQL, which fixed server role should be assigned to an administrator who requires complete, unrestricted permissions across all databases and server configurations?",
+        "type": "mcq",
+        "options": [
+          "sysadmin",
+          "db_owner",
+          "securityadmin",
+          "serveradmin"
+        ],
+        "answer": 0,
+        "solution": "sysadmin is the fixed server role that grants all privileges on the entire SQL Server instance. db_owner is a database-level role.",
+        "theorySummary": "Server-level roles (sysadmin, securityadmin, serveradmin) govern instance-wide management, while Database roles (db_owner, db_datareader, db_datawriter) control specific databases."
+      },
+      {
+        "id": "DDD-09",
+        "paper": "2023 Final Examination",
+        "questionNumber": 9,
+        "topic": "SQL Queries: Aggregation with HAVING Clause",
+        "marks": 12.0,
+        "difficulty": "Hard",
+        "prompt": "Which SQL clause is used to filter aggregated group results (e.g. showing only departments with more than 5 employees) after `GROUP BY` has grouped the rows?",
+        "type": "mcq",
+        "options": [
+          "HAVING COUNT(*) > 5",
+          "WHERE COUNT(*) > 5",
+          "ORDER BY COUNT(*) > 5",
+          "FILTER BY COUNT(*) > 5"
+        ],
+        "answer": 0,
+        "solution": "WHERE filters individual rows before aggregation; HAVING filters groups after aggregation.",
+        "theorySummary": "SQL execution order: FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY."
+      },
+      {
+        "id": "DDD-10",
+        "paper": "2022 Final Examination",
+        "questionNumber": 10,
+        "topic": "Lossless-Join Decomposition & Chase Test",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "A relation $R(A, B, C)$ is decomposed into $R_1(A, B)$ and $R_2(B, C)$. Under what functional dependency condition is this decomposition guaranteed to be LOSSLESS?",
+        "type": "mcq",
+        "options": [
+          "Either B -> A or B -> C must hold in F+ (The common attribute B must be a candidate key for at least one decomposed relation).",
+          "Both A -> B and C -> B must hold simultaneously.",
+          "The intersection R1 \u2229 R2 must equal the empty set.",
+          "All functional dependencies must have only one attribute on each side."
+        ],
+        "answer": 0,
+        "solution": "A binary decomposition of R into (R1, R2) is lossless if and only if (R1 \u2229 R2) -> R1 or (R1 \u2229 R2) -> R2 holds in F+. Here, R1 \u2229 R2 = {B}.",
+        "theorySummary": "Lossless join ensures that natural joining the decomposed relations reconstructs the original relation exactly without introducing spurious tuples."
+      },
+      {
+        "id": "DDD-11",
+        "paper": "Lockdown Compilation",
+        "questionNumber": 11,
+        "topic": "Serializability & Precedence Graphs",
+        "marks": 15.0,
+        "difficulty": "Expert",
+        "prompt": "Given a schedule $S$ with transactions $T_1, T_2$: $S = r_1(X), \\; w_2(X), \\; w_1(X), \\; c_1, \\; c_2$. Is schedule $S$ conflict serializable?",
+        "type": "mcq",
+        "options": [
+          "No, because there is a cycle in the precedence graph: r1(X) -> w2(X) creates edge T1 -> T2, and w2(X) -> w1(X) creates edge T2 -> T1.",
+          "Yes, because both transactions commit.",
+          "Yes, because all write operations are serialized.",
+          "No, because transactions must execute on different data items."
+        ],
+        "answer": 0,
+        "solution": "Conflicting operations on data item X: r1(X) precedes w2(X) => edge T1 -> T2. w2(X) precedes w1(X) => edge T2 -> T1. The precedence graph contains a cycle T1 <-> T2, so S is not conflict serializable.",
+        "theorySummary": "Two operations conflict if they belong to different transactions, access the same item, and at least one is a write. A schedule is conflict serializable iff its precedence graph is acyclic."
+      },
+      {
+        "id": "DDD-12",
+        "paper": "Lockdown Compilation",
+        "questionNumber": 12,
+        "topic": "Deadlock Handling: Wait-Die vs Wound-Wait",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "In deadlock prevention based on timestamp ordering, how does the 'Wait-Die' non-preemptive scheme behave when an older transaction $T_O$ requests a lock held by a younger transaction $T_Y$?",
+        "type": "mcq",
+        "options": [
+          "The older transaction TO is allowed to wait for TY.",
+          "The older transaction TO dies (aborts and restarts).",
+          "The younger transaction TY is immediately wounded (aborted).",
+          "Both transactions are rolled back."
+        ],
+        "answer": 0,
+        "solution": "Wait-Die: Older transaction can wait for younger (Old -> Young = wait). If young requests from old, young dies (Young -> Old = die).",
+        "theorySummary": "Timestamp schemes prevent cycles: Wait-Die is non-preemptive (older waits, younger dies). Wound-Wait is preemptive (older wounds younger, younger waits)."
+      },
+      {
+        "id": "DDD-13",
+        "paper": "2021 Final Exam Answers",
+        "questionNumber": 13,
+        "topic": "Stored Procedures & Explicit Transaction Control",
+        "marks": 10.0,
+        "difficulty": "Medium",
+        "prompt": "In an SQL stored procedure transferring funds between bank accounts, which statement should be placed inside the `CATCH` block to undo changes if an error occurs?",
+        "type": "mcq",
+        "options": [
+          "ROLLBACK TRANSACTION",
+          "COMMIT TRANSACTION",
+          "DROP TRANSACTION",
+          "SAVEPOINT FINISH"
+        ],
+        "answer": 0,
+        "solution": "ROLLBACK TRANSACTION cancels all modifications made since BEGIN TRANSACTION, restoring database state to maintain Atomicity.",
+        "theorySummary": "ACID Atomicity: All operations in a transaction succeed (COMMIT) or all are completely undone (ROLLBACK)."
+      },
+      {
+        "id": "DDD-14",
+        "paper": "2022 Final Examination",
+        "questionNumber": 14,
+        "topic": "Indexing: B+ Tree Index Characteristics",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "Why are B+ Tree index structures widely preferred over binary search trees for disk-based relational database management systems?",
+        "type": "mcq",
+        "options": [
+          "High branching fanout minimizes tree height and disk I/O operations, and linked leaf nodes provide fast range scans.",
+          "B+ trees require no disk space.",
+          "B+ trees execute in O(1) constant time regardless of dataset size.",
+          "B+ trees eliminate the need for primary keys."
+        ],
+        "answer": 0,
+        "solution": "Each B+ tree node matches a disk block holding hundreds of keys, keeping tree depth shallow (3-4 levels) to minimize disk page reads. Doubly-linked leaf nodes enable linear range traversals.",
+        "theorySummary": "B+ Tree is a self-balancing search tree where internal nodes store search keys as routers and leaf nodes store actual data pointers linked sequentially."
+      },
+      {
+        "id": "DDD-15",
+        "paper": "2024 Final Examination",
+        "questionNumber": 15,
+        "topic": "Referential Integrity: ON DELETE CASCADE",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "When creating a foreign key constraint with `ON DELETE CASCADE`, what occurs in the child table if a referenced row in the parent table is deleted?",
+        "type": "mcq",
+        "options": [
+          "All referencing rows in the child table are automatically deleted.",
+          "The deletion in the parent table is blocked with an integrity error.",
+          "The foreign key values in the child table are set to NULL.",
+          "The parent table row is retained as a tombstone."
+        ],
+        "answer": 0,
+        "solution": "ON DELETE CASCADE propagates deletion from parent to all matching foreign key child records automatically.",
+        "theorySummary": "Referential integrity actions: CASCADE (delete children), SET NULL (set child FK to null), RESTRICT/NO ACTION (reject deletion if children exist)."
+      },
+      {
+        "id": "DDD-16",
+        "paper": "2023 Final Examination",
+        "questionNumber": 16,
+        "topic": "SQL Window Functions: ROW_NUMBER vs RANK",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "In SQL, given three students tied with an equal exam mark of 85 at the top, how do `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()` assign rank values ordered descending?",
+        "type": "mcq",
+        "options": [
+          "ROW_NUMBER assigns 1, 2, 3; RANK assigns 1, 1, 1 (next is 4); DENSE_RANK assigns 1, 1, 1 (next is 2).",
+          "All three functions produce the exact same sequence 1, 2, 3.",
+          "RANK assigns 1, 2, 3; DENSE_RANK assigns 1, 1, 1 (next is 4).",
+          "ROW_NUMBER cannot be used with ORDER BY."
+        ],
+        "answer": 0,
+        "solution": "ROW_NUMBER assigns unique sequential integers. RANK assigns identical ranks to ties and skips subsequent numbers. DENSE_RANK assigns identical ranks to ties without skipping subsequent numbers.",
+        "theorySummary": "Window functions compute values across a set of table rows related to the current row without collapsing rows like GROUP BY."
+      },
+      {
+        "id": "DDD-17",
+        "paper": "Lockdown Compilation",
+        "questionNumber": 17,
+        "topic": "Multi-Valued Dependencies & Fourth Normal Form (4NF)",
+        "marks": 12.0,
+        "difficulty": "Expert",
+        "prompt": "Under what condition does a relation $R$ violate Fourth Normal Form (4NF)?",
+        "type": "mcq",
+        "options": [
+          "When R contains a non-trivial multi-valued dependency X ->> Y where X is NOT a superkey.",
+          "When R has a transitive functional dependency.",
+          "When R has composite foreign keys.",
+          "When R contains NULL values."
+        ],
+        "answer": 0,
+        "solution": "A relation is in 4NF if it is in BCNF and for every non-trivial multi-valued dependency X ->> Y, X is a superkey.",
+        "theorySummary": "4NF addresses multi-valued dependencies where two independent 1-to-many relationships are incorrectly modeled in a single table, causing tuple proliferation."
+      },
+      {
+        "id": "DDD-18",
+        "paper": "2022 Final Examination",
+        "questionNumber": 18,
+        "topic": "Concurrency Control: Lock Conversions",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "In multi-granularity locking, what lock conversion is required when a transaction reading a record decides to update it?",
+        "type": "mcq",
+        "options": [
+          "Upgrade from a Shared Lock (S) to an Exclusive Lock (X)",
+          "Downgrade from an Exclusive Lock (X) to a Shared Lock (S)",
+          "Release the lock immediately before writing",
+          "Acquire an Intent Shared Lock (IS)"
+        ],
+        "answer": 0,
+        "solution": "Upgrading converts a Shared (read-only) lock into an Exclusive (read-write) lock. If another transaction holds an S-lock on the same item, the upgrading transaction must wait.",
+        "theorySummary": "Lock upgrading (S -> X) occurs during the growing phase; lock downgrading (X -> S) can occur during the shrinking phase."
+      },
+      {
+        "id": "DDD-19",
+        "paper": "2021 Final Exam Answers",
+        "questionNumber": 19,
+        "topic": "Database Recovery: Write-Ahead Logging (WAL)",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "What is the core rule of Write-Ahead Logging (WAL) in database recovery protocols?",
+        "type": "mcq",
+        "options": [
+          "The log record for an update must be flushed to stable disk storage BEFORE the corresponding database page is written to disk.",
+          "Data pages must be written to disk before the log record.",
+          "Logs are only written after the transaction commits.",
+          "Disk caches must be disabled entirely."
+        ],
+        "answer": 0,
+        "solution": "WAL ensures Durability and Atomicity: before any dirty database buffer page overwrites existing disk data, the corresponding undo/redo log records must already reside safely on non-volatile storage.",
+        "theorySummary": "WAL protocol guarantees that if a crash occurs at any moment, uncommitted updates can be UNDONE and committed updates can be REDONE using the disk log."
+      },
+      {
+        "id": "DDD-20",
+        "paper": "2024 Final Examination",
+        "questionNumber": 20,
+        "topic": "SQL Subqueries: NOT IN vs NOT EXISTS with NULLs",
+        "marks": 12.0,
+        "difficulty": "Expert",
+        "prompt": "Why can `WHERE column_id NOT IN (SELECT foreign_id FROM other_table)` return ZERO rows if `other_table` contains even a single NULL value in `foreign_id`?",
+        "type": "mcq",
+        "options": [
+          "In three-valued logic, `x NOT IN (1, 2, NULL)` evaluates to `UNKNOWN`, which is treated as FALSE in WHERE clauses.",
+          "SQL aborts subqueries that encounter NULLs.",
+          "NOT IN automatically converts NULL to zero.",
+          "NOT IN requires unique non-null indexes to function."
+        ],
+        "answer": 0,
+        "solution": "`x NOT IN (val, NULL)` is equivalent to `x != val AND x != NULL`. Since `x != NULL` evaluates to UNKNOWN, `TRUE AND UNKNOWN` is UNKNOWN. A WHERE clause requires TRUE to output rows. Using `NOT EXISTS` avoids this pitfall.",
+        "theorySummary": "SQL three-valued logic (TRUE, FALSE, UNKNOWN) makes NOT IN dangerous when nullable columns are involved. NOT EXISTS uses two-valued logic and is NULL-safe."
+      }
+    ]
+  },
+  "SE": {
+    "id": "SE",
+    "code": "IT2020 / SE2030",
+    "title": "Software Engineering",
+    "semester": "Year 2, Semester 1",
+    "description": "Use case robustness analysis (B-C-E), GoF design patterns, black-box & white-box testing, cyclomatic complexity, and state machines.",
+    "icon": "code-2",
+    "accent": "#ea580c",
+    "papers": [
+      "2024 June Final Exam",
+      "2022 Final Exam",
+      "2022 May Revision",
+      "2018 Model Paper"
+    ],
+    "questions": [
+      {
+        "id": "SE-01",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 1,
+        "topic": "Use Case Robustness Analysis (Boundary, Control, Entity)",
+        "marks": 25.0,
+        "difficulty": "Hard",
+        "prompt": "During Use Case Analysis for a healthcare 'Schedule Appointment' system:\n- Step 1: Patient submits login credentials via `LoginForm`.\n- Step 2: `AuthenticationHandler` verifies credentials against `PatientRecord`.\n- Step 3: `AppointmentScheduler` checks available doctor slots in `ScheduleDB`.\n\nCategorize `LoginForm`, `AuthenticationHandler`, and `PatientRecord` into Robustness stereotypes (Boundary, Control, Entity):",
+        "type": "mcq",
+        "options": [
+          "LoginForm: Boundary; AuthenticationHandler: Control; PatientRecord: Entity",
+          "LoginForm: Control; AuthenticationHandler: Boundary; PatientRecord: Entity",
+          "LoginForm: Entity; AuthenticationHandler: Control; PatientRecord: Boundary",
+          "All three classes are Entity classes"
+        ],
+        "answer": 0,
+        "solution": "Boundary objects mediate interaction between actors and the system (screens, forms, APIs). Control objects coordinate use-case workflows and business logic. Entity objects store persistent domain state.",
+        "theorySummary": "Robustness analysis uses three stereotypes: Boundary (actor communication), Control (application logic orchestration), and Entity (long-lived persistent information)."
+      },
+      {
+        "id": "SE-02",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 2,
+        "topic": "Gang of Four (GoF) Design Patterns",
+        "marks": 20.0,
+        "difficulty": "Expert",
+        "prompt": "A payment processing system must support multiple payment gateways (Stripe, PayPal, Cryptopay). The specific gateway algorithm must be selectable at runtime based on user choice without altering the client code that executes the transaction.\n\nWhich design pattern should be applied, and what is its classification?",
+        "type": "mcq",
+        "options": [
+          "Strategy Pattern (Behavioral pattern)",
+          "Singleton Pattern (Creational pattern)",
+          "Adapter Pattern (Structural pattern)",
+          "Observer Pattern (Behavioral pattern)"
+        ],
+        "answer": 0,
+        "solution": "The Strategy pattern defines a family of interchangeable algorithms, encapsulates each one, and makes them interchangeable at runtime without modifying the context client.",
+        "theorySummary": "GoF Design Patterns are categorized into Creational (object creation), Structural (class composition), and Behavioral (algorithms and assignment of responsibilities between objects)."
+      },
+      {
+        "id": "SE-03",
+        "paper": "2022 Final Exam",
+        "questionNumber": 3,
+        "topic": "Software Testing: Boundary Value Analysis & Equivalence Partitioning",
+        "marks": 20.0,
+        "difficulty": "Hard",
+        "prompt": "A banking system accepts loan application amounts between $1,000 and $50,000 inclusive (integer dollar values).\n\nUsing 2-value Boundary Value Analysis (BVA), what are the boundary test cases for the valid range?",
+        "type": "mcq",
+        "options": [
+          "999, 1000, 50000, 50001",
+          "1000, 25000, 50000",
+          "0, 1000, 50000, 100000",
+          "1001, 49999"
+        ],
+        "answer": 0,
+        "solution": "Boundary Value Analysis tests values at and immediately beyond input boundaries: min-1 (999, invalid), min (1000, valid), max (50000, valid), and max+1 (50001, invalid).",
+        "theorySummary": "Boundary Value Analysis complements Equivalence Partitioning by recognizing that defects concentrate overwhelmingly around boundaries rather than in the center of partitions."
+      },
+      {
+        "id": "SE-04",
+        "paper": "2022 May Revision",
+        "questionNumber": 4,
+        "topic": "White-Box Testing & Cyclomatic Complexity",
+        "marks": 15.0,
+        "difficulty": "Hard",
+        "prompt": "A Control Flow Graph (CFG) for an algorithm has 14 edges ($E = 14$), 10 nodes ($N = 10$), and 1 connected component ($P = 1$).\n\nCalculate the Cyclomatic Complexity $V(G)$ using McCabe's formula $V(G) = E - N + 2P$ and identify the number of linearly independent basis paths.",
+        "type": "multipart",
+        "subquestions": [
+          {
+            "id": "sq1",
+            "label": "Cyclomatic Complexity V(G):",
+            "type": "text",
+            "answer": "6",
+            "acceptedAnswers": [
+              "6"
+            ],
+            "hint": "V(G) = E - N + 2P = 14 - 10 + 2(1) = 4 + 2 = 6."
+          },
+          {
+            "id": "sq2",
+            "label": "Number of linearly independent basis paths:",
+            "type": "text",
+            "answer": "6",
+            "acceptedAnswers": [
+              "6"
+            ],
+            "hint": "McCabe's Cyclomatic Complexity V(G) equals the exact number of independent basis paths required for 100% branch/statement coverage."
+          }
+        ],
+        "theorySummary": "Cyclomatic Complexity V(G) measures code complexity and defines the upper bound for the number of test cases required to achieve branch coverage: V(G) = E - N + 2P or P + 1 (predicate nodes + 1)."
+      },
+      {
+        "id": "SE-05",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 5,
+        "topic": "UML Sequence Diagrams: Message Types & Fragments",
+        "marks": 15.0,
+        "difficulty": "Medium",
+        "prompt": "In a UML 2.x Sequence Diagram, how is an asynchronous message visually distinguished from a synchronous message?",
+        "type": "mcq",
+        "options": [
+          "Asynchronous has an open stick arrowhead (\u2014>); synchronous has a solid filled arrowhead (\u2014\u25ba).",
+          "Asynchronous uses a dashed line; synchronous uses a solid line.",
+          "Asynchronous has a circle at the end; synchronous has an arrow.",
+          "Asynchronous messages cannot be drawn in sequence diagrams."
+        ],
+        "answer": 0,
+        "solution": "UML standard: Synchronous calls (blocking) use a solid line with a filled arrowhead. Asynchronous signals (non-blocking) use a solid line with an open stick arrowhead. Reply messages use a dashed line with an open arrowhead.",
+        "theorySummary": "Sequence diagrams model dynamic interaction over time. Lifelines represent participant objects; activation bars show execution duration; combined fragments (alt, opt, loop) express conditional logic."
+      },
+      {
+        "id": "SE-06",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 6,
+        "topic": "UML Component Diagrams: Provided vs Required Interfaces",
+        "marks": 15.0,
+        "difficulty": "Hard",
+        "prompt": "In the 2024 Final Exam Library System, component `UserVerification` offers the `iVerify` interface, while component `Registration` depends on it.\nHow are Provided and Required interfaces represented in UML Component notation?",
+        "type": "mcq",
+        "options": [
+          "Provided interface is drawn as a ball / lollipop (\u2014\u25cb); Required interface is drawn as a socket / cup (\u2014\u2283).",
+          "Provided interface is drawn as a dashed box; Required is a solid diamond.",
+          "Provided is a socket; Required is a lollipop.",
+          "Both are drawn as solid rectangles."
+        ],
+        "answer": 0,
+        "solution": "The ball-and-socket notation: 'Ball' (lollipop) represents an interface provided/realized by the component. 'Socket' (half-circle) represents an interface required/demanded by the client.",
+        "theorySummary": "Component diagrams show software modularity and dependencies via well-defined provided and required interfaces."
+      },
+      {
+        "id": "SE-07",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 7,
+        "topic": "Behavioral Design Patterns: Observer Pattern",
+        "marks": 20.0,
+        "difficulty": "Expert",
+        "prompt": "In the 2024 Final Exam Question 4(a): A vehicle fleet monitoring system tracks metrics (speed, fuel, location). Multiple stakeholders (fleet managers, drivers) must be notified in real-time when metrics change or thresholds are exceeded, and new stakeholders will be added in the future.\n\nWhich design pattern is best suited for this requirement, and why?",
+        "type": "mcq",
+        "options": [
+          "Observer Pattern: It defines a one-to-many dependency where multiple observers register and automatically receive updates when the vehicle subject changes state.",
+          "Singleton Pattern: It ensures only one vehicle exists in memory.",
+          "Adapter Pattern: It converts incompatible interfaces between trucks and cars.",
+          "Decorator Pattern: It attaches graphical borders to fleet reports."
+        ],
+        "answer": 0,
+        "solution": "The Observer pattern establishes a 1-to-many subscription mechanism: the Fleet Monitoring System acts as the Subject/Observable, notifying all registered Stakeholder Observers without tight coupling.",
+        "theorySummary": "Observer pattern encapsulates publish-subscribe semantics, decoupling subjects from concrete observer implementations."
+      },
+      {
+        "id": "SE-08",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 8,
+        "topic": "Structural Design Patterns: Facade Pattern",
+        "marks": 15.0,
+        "difficulty": "Hard",
+        "prompt": "In the 2024 Final Exam Question 4(c), a class `RentalService` provides simplified methods like `rentMovie(customerId, title)` that internally coordinate multiple complex subsystems: `MovieDatabase.searchMovie()`, `CustomerDatabase.getRentalHistory()`, and `BillingSystem.charge()`.\n\nWhat design pattern is this?",
+        "type": "mcq",
+        "options": [
+          "Facade Pattern: Provides a unified, high-level interface that makes complex subsystem classes easier to use.",
+          "Proxy Pattern: Controls access to remote database instances.",
+          "Composite Pattern: Builds tree hierarchies of rental items.",
+          "Bridge Pattern: Decouples abstraction from implementation."
+        ],
+        "answer": 0,
+        "solution": "The Facade pattern provides a simplified interface to a library, framework, or complex set of classes, wrapping subsystem interactions behind a single clean entry point.",
+        "theorySummary": "Facade shields clients from subsystem complexities and promotes loose coupling."
+      },
+      {
+        "id": "SE-09",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 9,
+        "topic": "State Machine Triggers",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "In a UML State Machine diagram, which trigger type occurs upon the satisfaction of a Boolean expression or variable change (e.g. `when(temperature > 100)`)?",
+        "type": "mcq",
+        "options": [
+          "Change Trigger",
+          "Call Trigger",
+          "Signal Trigger",
+          "Time Trigger"
+        ],
+        "answer": 0,
+        "solution": "Change trigger evaluates a Boolean condition continuously until it becomes true. Call trigger is an operation invocation. Signal trigger is receipt of an asynchronous signal. Time trigger specifies duration expiration (after/at).",
+        "theorySummary": "Four types of UML state triggers: Signal (async event), Call (operation dispatch), Time (after(5s)), Change (when(condition))."
+      },
+      {
+        "id": "SE-10",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 10,
+        "topic": "Software Quality: Verification vs Validation",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "What is the classic distinction between Verification and Validation in software testing?",
+        "type": "mcq",
+        "options": [
+          "Verification asks 'Are we building the product right?' (conformance to specs); Validation asks 'Are we building the right product?' (satisfying user needs).",
+          "Verification is done by clients; Validation is done by developers.",
+          "Verification involves automated tests; Validation involves manual testing only.",
+          "Verification happens only in production; Validation happens in development."
+        ],
+        "answer": 0,
+        "solution": "Boehm's famous definitions: Verification checks whether artifacts correctly satisfy conditions imposed by prior specifications. Validation ensures the software meets real operational requirements and customer expectations.",
+        "theorySummary": "Verification = reviews, walkthroughs, static analysis, unit tests against specs. Validation = acceptance testing, beta tests with actual users."
+      },
+      {
+        "id": "SE-11",
+        "paper": "2022 Final Exam",
+        "questionNumber": 11,
+        "topic": "Creational Patterns: Singleton Pattern",
+        "marks": 10.0,
+        "difficulty": "Hard",
+        "prompt": "In Java, what is the purpose of the `volatile` keyword when implementing the thread-safe Double-Checked Locking Singleton pattern?",
+        "type": "mcq",
+        "options": [
+          "It prevents CPU instruction reordering so that other threads cannot observe a partially initialized Singleton instance.",
+          "It makes the Singleton class immutable.",
+          "It automatically serializes the instance to disk.",
+          "It prevents garbage collection of the instance."
+        ],
+        "answer": 0,
+        "solution": "Without volatile, the compiler or CPU can reorder instructions (allocating memory, assigning pointer, then running constructor), allowing another thread to see a non-null but uninitialized object.",
+        "theorySummary": "Singleton pattern guarantees a class has only one instance and provides a global access point. Thread safety requires double-checked locking with volatile."
+      },
+      {
+        "id": "SE-12",
+        "paper": "2022 Final Exam",
+        "questionNumber": 12,
+        "topic": "Creational Patterns: Factory Method vs Abstract Factory",
+        "marks": 12.0,
+        "difficulty": "Hard",
+        "prompt": "What is the primary architectural difference between the Factory Method pattern and the Abstract Factory pattern?",
+        "type": "mcq",
+        "options": [
+          "Factory Method relies on inheritance to create one product; Abstract Factory uses object composition to create families of related products.",
+          "Factory Method can only create singletons.",
+          "Abstract Factory does not use interfaces.",
+          "Factory Method is behavioral; Abstract Factory is structural."
+        ],
+        "answer": 0,
+        "solution": "Factory Method defines an interface for creating a single object, letting subclasses decide which class to instantiate. Abstract Factory provides an interface for creating families of related or dependent objects.",
+        "theorySummary": "Factory Method: single product via subclass override. Abstract Factory: family of distinct products created via factory composition."
+      },
+      {
+        "id": "SE-13",
+        "paper": "2022 May Revision",
+        "questionNumber": 13,
+        "topic": "Structural Patterns: Decorator Pattern",
+        "marks": 12.0,
+        "difficulty": "Hard",
+        "prompt": "Which design pattern attaches additional responsibilities to an object dynamically at runtime as an alternative to subclassing?",
+        "type": "mcq",
+        "options": [
+          "Decorator Pattern",
+          "Proxy Pattern",
+          "Composite Pattern",
+          "Flyweight Pattern"
+        ],
+        "answer": 0,
+        "solution": "The Decorator pattern wraps an object in an enclosing decorator class conforming to the same interface, layering new behaviors dynamically without class explosion.",
+        "theorySummary": "Decorator follows Open-Closed Principle: open for extension, closed for modification. Examples include Java IO Streams (e.g. BufferedReader(new FileReader))."
+      },
+      {
+        "id": "SE-14",
+        "paper": "2022 May Revision",
+        "questionNumber": 14,
+        "topic": "Structural Patterns: Adapter Pattern",
+        "marks": 10.0,
+        "difficulty": "Medium",
+        "prompt": "An existing third-party logging library has method `logMessage(int priority, String msg)`, but your application's `ILogger` interface requires `info(String msg)`. Which pattern bridges this incompatibility?",
+        "type": "mcq",
+        "options": [
+          "Adapter Pattern (Wrapper)",
+          "Bridge Pattern",
+          "Strategy Pattern",
+          "Template Method Pattern"
+        ],
+        "answer": 0,
+        "solution": "The Adapter pattern converts the interface of a class into another interface clients expect, enabling classes with incompatible interfaces to work together.",
+        "theorySummary": "Adapter pattern matches two existing incompatible interfaces via Object Adapter (composition) or Class Adapter (multiple inheritance)."
+      },
+      {
+        "id": "SE-15",
+        "paper": "2018 Model Paper",
+        "questionNumber": 15,
+        "topic": "Agile Methodologies: Scrum Framework",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "In the Scrum framework, who is solely responsible for prioritizing and managing the items in the Product Backlog?",
+        "type": "mcq",
+        "options": [
+          "Product Owner",
+          "Scrum Master",
+          "Development Team Lead",
+          "Project Stakeholder"
+        ],
+        "answer": 0,
+        "solution": "The Product Owner has sole authority over the content, ordering, and prioritization of the Product Backlog.",
+        "theorySummary": "Scrum roles: Product Owner (manages product backlog and business value), Scrum Master (servant-leader removing impediments), Developers (deliver increments)."
+      },
+      {
+        "id": "SE-16",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 16,
+        "topic": "Software Architecture: Microservices vs Monolith",
+        "marks": 12.0,
+        "difficulty": "Hard",
+        "prompt": "Which of the following is a recognized advantage of a Microservices Architecture over a Monolithic Architecture?",
+        "type": "mcq",
+        "options": [
+          "Independent deployability and granular scalability of individual business capabilities using heterogeneous technology stacks.",
+          "Zero network latency between inter-service communications.",
+          "Simpler transactional consistency and distributed debugging.",
+          "Elimination of API gateways and load balancers."
+        ],
+        "answer": 0,
+        "solution": "Microservices isolate services along business domain boundaries, allowing independent scaling, autonomous team deployments, and polyglot tech stacks.",
+        "theorySummary": "Microservices trade local complexity for operational/network complexity (distributed data management, eventual consistency, network latency)."
+      },
+      {
+        "id": "SE-17",
+        "paper": "2024 June Final Exam",
+        "questionNumber": 17,
+        "topic": "UML Class Diagrams: Association vs Aggregation vs Composition",
+        "marks": 12.0,
+        "difficulty": "Hard",
+        "prompt": "In UML Class modeling, how is Composition distinguished from Aggregation?",
+        "type": "mcq",
+        "options": [
+          "Composition represents a strong 'part-of' relationship with coincident lifetime (represented by a filled black diamond); if the whole is destroyed, the parts are destroyed.",
+          "Aggregation has coincident lifetime; Composition does not.",
+          "Composition is represented by a hollow diamond.",
+          "There is no difference between Aggregation and Composition."
+        ],
+        "answer": 0,
+        "solution": "Composition (solid diamond): The part cannot exist without the whole (e.g. Order and OrderLine). Aggregation (hollow diamond): The part can exist independently of the whole (e.g. Department and Employee).",
+        "theorySummary": "Relationships in UML: Dependency (uses-a, dashed arrow) < Association (has-a) < Aggregation (shared whole-part, hollow diamond) < Composition (composite whole-part, filled diamond) < Generalization (is-a, triangle)."
+      },
+      {
+        "id": "SE-18",
+        "paper": "2022 Final Exam",
+        "questionNumber": 18,
+        "topic": "Software Quality Attributes (ISO/IEC 25010)",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "According to the ISO/IEC 25010 software product quality model, 'Mean Time to Failure (MTTF)' and 'Fault Tolerance' are sub-characteristics of which quality attribute?",
+        "type": "mcq",
+        "options": [
+          "Reliability",
+          "Performance Efficiency",
+          "Maintainability",
+          "Portability"
+        ],
+        "answer": 0,
+        "solution": "Reliability comprises Maturity, Availability, Fault Tolerance, and Recoverability.",
+        "theorySummary": "ISO 25010 defines 8 quality characteristics: Functional Suitability, Performance Efficiency, Compatibility, Usability, Reliability, Security, Maintainability, and Portability."
+      },
+      {
+        "id": "SE-19",
+        "paper": "2022 May Revision",
+        "questionNumber": 19,
+        "topic": "Refactoring Techniques & Code Smells",
+        "marks": 10.0,
+        "difficulty": "Medium",
+        "prompt": "Which refactoring technique is most appropriate when a single method has grown excessively long and performs multiple distinct tasks with high internal cohesion within each segment?",
+        "type": "mcq",
+        "options": [
+          "Extract Method",
+          "Inline Method",
+          "Introduce Foreign Method",
+          "Pull Up Method"
+        ],
+        "answer": 0,
+        "solution": "Extract Method isolates contiguous code doing one specific thing into a well-named private method, improving readability, testability, and reuse.",
+        "theorySummary": "Refactoring improves internal structure without altering external observable behavior. Common techniques: Extract Method, Extract Class, Replace Conditional with Polymorphism."
+      },
+      {
+        "id": "SE-20",
+        "paper": "2018 Model Paper",
+        "questionNumber": 20,
+        "topic": "Requirements Engineering: Functional vs Non-Functional",
+        "marks": 8.0,
+        "difficulty": "Medium",
+        "prompt": "Which of the following requirements represents a NON-FUNCTIONAL requirement?",
+        "type": "mcq",
+        "options": [
+          "The system must process and return search results in under 500 milliseconds for 99% of requests with 1,000 concurrent users.",
+          "The user can reset their account password via email.",
+          "The administrator can export student records as a CSV file.",
+          "The patient can book an appointment with a doctor."
+        ],
+        "answer": 0,
+        "solution": "Functional requirements define what the system must do (features, services). Non-functional requirements define how well it must do it (performance, security, scalability, constraints).",
+        "theorySummary": "Non-functional requirements (NFRs) specify criteria that judge the operation of a system rather than specific behaviors."
+      }
+    ]
+  }
+}
